@@ -1,0 +1,51 @@
+# Environment & Local Secrets
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!connector/.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Next.js
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+apps/web/test-results/
+apps/web/playwright-report/
+
+# Databases & Scratch
+test.db
+test.db-journal
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+scratch/
+scripts/*.json
+.system_generated/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# WhatsApp Web Connector Sessions & Dependencies
+connector/node_modules/
+.wwebjs_auth/
+connector/.wwebjs_auth/
+.wwebjs_cache/
+connector/.wwebjs_cache/

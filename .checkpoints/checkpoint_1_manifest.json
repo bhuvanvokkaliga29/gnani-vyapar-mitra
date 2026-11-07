@@ -1,0 +1,45 @@
+{
+  "checkpoint": "checkpoint-1",
+  "name": "Checkpoint 1 — Stable Merchant Dashboard & Multi-Channel Core",
+  "timestamp": "2026-10-18T01:45:00+05:30",
+  "commit_sha": "5d477d5830b501d5178044738740c0303ba24294",
+  "git_tag": "checkpoint-1",
+  "git_branch": "checkpoint-1",
+  "rollback_command": "git checkout checkpoint-1",
+  "hard_reset_command": "git reset --hard checkpoint-1",
+  "verified_components": {
+    "dashboard_frontend": {
+      "url": "http://localhost:3000",
+      "status": "RUNNING (Fast Refresh 200 OK)",
+      "features": [
+        "Banner header with clear apparel sketch pattern and zero black fade behind logo",
+        "Enlarged Vyapar Mitra brand logo (h-11 to h-14, drop-shadow-sm)",
+        "Title renamed to 'Vyapar Mitra Dashboard'",
+        "4 Expanded KPI cards (Orders 18, Revenue ₹44,982, Profit ₹26,090, AOV ₹2,499) with min-h-[136px] and 32px font-black",
+        "Merchant Action Radar with clean enterprise white cards, subtle badges, and dark slate buttons",
+        "Streamlined channel efficiency bar (WhatsApp 64.2%, Amazon 29.6%, D2C Web 6.2%)",
+        "Current Catalog with unit economics and margin floor tracking",
+        "AI Product Studio modal and Product Detail modal"
+      ]
+    },
+    "fastapi_backend": {
+      "url": "http://localhost:8000",
+      "status": "RUNNING (Uvicorn 0.52.4)",
+      "routers": [
+        "whatsapp.py", "decisions.py", "orders.py", "webhooks.py",
+        "mcp.py", "growth_doctor.py", "marketplace.py", "campaigns.py"
+      ]
+    },
+    "whatsapp_connector": {
+      "path": "connector/index.js",
+      "engine": "whatsapp-web.js (Node.js LocalAuth)",
+      "target_phone": "+919113960498",
+      "languages": ["English", "Kannada", "Hindi"]
+    },
+    "documentation_and_diagrams": {
+      "architecture_spec": "ARCHITECTURE.md (461 lines, 4 planes, 11-stage sequence)",
+      "architecture_image": "architecture_diagram.png (525 KB, 2x High-DPI)",
+      "architecture_vector": "docs/architecture_diagram.svg (XML validated)"
+    }
+  }
+}

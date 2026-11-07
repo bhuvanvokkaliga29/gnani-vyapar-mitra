@@ -1,0 +1,26 @@
+{
+  "run_id": "run_061156ecc33a",
+  "summary_version": "benchmark-summary/v1",
+  "started_at": "2026-09-05T11:33:35.105904Z",
+  "finished_at": "2026-09-05T11:33:39.987569Z",
+  "total_scenarios": 10,
+  "passed": 10,
+  "failed": 0,
+  "inconclusive": 0,
+  "assertions_total": 36,
+  "assertions_passed": 36,
+  "assertions_failed": 0,
+  "categories": {
+    "OUTCOME": 1,
+    "DECISION": 1,
+    "SAFETY": 1,
+    "RESILIENCE": 2,
+    "LIFECYCLE": 1,
+    "LEARNING": 1,
+    "TENANT": 1,
+    "ECONOMICS": 1,
+    "EXECUTION": 1
+  },
+  "duration_ms": 4881.710199999361,
+  "reproducibility_status": "VERIFIED"
+}

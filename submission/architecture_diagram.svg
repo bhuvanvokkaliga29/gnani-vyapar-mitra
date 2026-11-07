@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="100%" height="100%" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    
+    <linearGradient id="execGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+
+    <linearGradient id="learnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+
+    <linearGradient id="govGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#062f26" />
+    </linearGradient>
+
+    <linearGradient id="rzpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2340" />
+      <stop offset="100%" stop-color="#143764" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <!-- Markers -->
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowIndigo" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#818cf8" />
+    </marker>
+    <marker id="arrowEmerald" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#34d399" />
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#3395ff" />
+    </marker>
+  </defs>
+
+  <!-- Background grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.3"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- ==================== HEADER ==================== -->
+  <g transform="translate(60, 45)">
+    <rect x="-10" y="-10" width="1280" height="70" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <text x="20" y="32" font-size="24" font-weight="800" fill="#f8fafc" letter-spacing="0.5">🛒 MERCHANT POLICY AGENT</text>
+    <text x="430" y="32" font-size="16" font-weight="500" fill="#94a3b8">|  Autonomous Commercial Policy Architecture</text>
+    <rect x="910" y="10" width="340" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="925" y="32" font-size="12" font-weight="600" fill="#38bdf8">LLM Proposes ➔ Code Validates ➔ Razorpay Reports ➔ Learns</text>
+  </g>
+
+  <!-- ==================== PLANE 1: EXECUTION PLANE ==================== -->
+  <g transform="translate(60, 140)">
+    <!-- Plane Container -->
+    <rect x="0" y="0" width="600" height="520" rx="16" fill="url(#execGrad)" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6" filter="url(#cardShadow)"/>
+    
+    <!-- Plane Header -->
+    <rect x="0" y="0" width="600" height="48" rx="16" fill="#1e293b" fill-opacity="0.8"/>
+    <path d="M 0 32 L 0 48 L 600 48 L 600 32 Z" fill="#1e293b" fill-opacity="0.8"/>
+    <circle cx="28" cy="24" r="8" fill="#38bdf8" />
+    <text x="46" y="29" font-size="15" font-weight="700" fill="#f8fafc">1. EXECUTION PLANE</text>
+    <rect x="230" y="12" width="180" height="24" rx="4" fill="#0369a1" fill-opacity="0.4"/>
+    <text x="240" y="28" font-size="11" font-weight="600" fill="#7dd3fc">REAL-TIME FAST PATH (&lt; 70ms)</text>
+    <text x="505" y="28" font-size="11" font-weight="500" fill="#94a3b8">Deterministic</text>
+
+    <!-- Stage 1 & 2: Intent Ingestion -->
+    <g transform="translate(24, 70)">
+      <rect width="552" height="74" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="12" width="28" height="20" rx="4" fill="#0284c7"/>
+      <text x="17" y="26" font-size="11" font-weight="700" fill="#ffffff">1-2</text>
+      <text x="48" y="27" font-size="13" font-weight="700" fill="#e2e8f0">Intent Normalizer &amp; Extractor</text>
+      <text x="485" y="27" font-size="11" font-weight="600" fill="#38bdf8">22.7ms</text>
+      <text x="14" y="52" font-size="11" fill="#94a3b8">• Prompt Injection Defense • Unicode Normalizer • Hard Constraints vs Preferences</text>
+      <text x="14" y="66" font-size="10" font-family="monospace" fill="#64748b">Contract: buyer-intent/v1 (Budget in Integer Paise)</text>
+    </g>
+
+    <!-- Arrow Down -->
+    <line x1="300" y1="144" x2="300" y2="164" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan)"/>
+
+    <!-- Stage 3 & 4: Commerce & Policy LLM -->
+    <g transform="translate(24, 168)">
+      <rect width="552" height="84" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="12" width="28" height="20" rx="4" fill="#8b5cf6"/>
+      <text x="17" y="26" font-size="11" font-weight="700" fill="#ffffff">3-4</text>
+      <text x="48" y="27" font-size="13" font-weight="700" fill="#e2e8f0">Commerce Context &amp; LLM Policy Advisory Agent</text>
+      <text x="485" y="27" font-size="11" font-weight="600" fill="#c084fc">18.4ms</text>
+      <text x="14" y="52" font-size="11" fill="#94a3b8">• Catalog &amp; COGS Snapshot • Strategy Formulator (Bundle, Discount, Single, Standalone)</text>
+      <text x="14" y="68" font-size="10" font-weight="600" fill="#f43f5e">INVARIANT: LLM generates candidate proposals only — ZERO financial spending authority</text>
+    </g>
+
+    <!-- Arrow Down -->
+    <line x1="300" y1="252" x2="300" y2="272" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan)"/>
+
+    <!-- Stage 5 & 6: Deterministic Safety & Selection -->
+    <g transform="translate(24, 276)">
+      <rect width="552" height="84" rx="8" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.2"/>
+      <rect x="12" y="12" width="28" height="20" rx="4" fill="#059669"/>
+      <text x="17" y="26" font-size="11" font-weight="700" fill="#ffffff">5-6</text>
+      <text x="48" y="27" font-size="13" font-weight="700" fill="#e2e8f0">Deterministic Safety Validator &amp; LinUCB Selector</text>
+      <text x="490" y="27" font-size="11" font-weight="600" fill="#34d399">9.2ms</text>
+      <text x="14" y="52" font-size="11" fill="#a7f3d0">• Margin Floor &ge; 25.00% • Discount Ceiling &le; 20.00% • Stock &gt; 0 • Integer Math</text>
+      <text x="14" y="68" font-size="10" font-family="monospace" fill="#94a3b8">LinUCB 19-dim Context Vector x ➔ UCB = &theta;^T x + &alpha;&radic;(x^T A^-1 x) (Budget &le; 15%)</text>
+    </g>
+
+    <!-- Arrow Down -->
+    <line x1="300" y1="360" x2="300" y2="380" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan)"/>
+
+    <!-- Stage 7, 8, 9: Boundary & Execution -->
+    <g transform="translate(24, 384)">
+      <rect width="552" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="12" width="28" height="20" rx="4" fill="#d97706"/>
+      <text x="17" y="26" font-size="11" font-weight="700" fill="#ffffff">7-9</text>
+      <text x="48" y="27" font-size="13" font-weight="700" fill="#e2e8f0">Execution Boundary &amp; Order Authorization</text>
+      <text x="485" y="27" font-size="11" font-weight="600" fill="#fbbf24">31.8ms</text>
+      <text x="14" y="52" font-size="11" fill="#94a3b8">• Fresh Row-Level Inventory Reservation (SELECT ... FOR UPDATE)</text>
+      <text x="14" y="70" font-size="11" fill="#94a3b8">• Cryptographic HMAC-SHA256 Authorization Token Signing</text>
+      <text x="14" y="88" font-size="10" font-family="monospace" fill="#fbbf24">Emits: POST /v1/orders to Razorpay (Integer Paise Amount)</text>
+    </g>
+  </g>
+
+  <!-- ==================== RAZORPAY GATEWAY ==================== -->
+  <g transform="translate(700, 140)">
+    <rect width="640" height="150" rx="16" fill="url(#rzpGrad)" stroke="#3395ff" stroke-width="2" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="640" height="42" rx="16" fill="#071b33"/>
+    <path d="M 0 28 L 0 42 L 640 42 L 640 28 Z" fill="#071b33"/>
+    
+    <text x="24" y="27" font-size="15" font-weight="800" fill="#3395ff">💳 RAZORPAY PAYMENT GATEWAY (TEST MODE)</text>
+    <text x="460" y="27" font-size="11" font-weight="600" fill="#93c5fd">Financial Ground Truth</text>
+
+    <!-- Inner Cards -->
+    <g transform="translate(20, 56)">
+      <rect width="180" height="74" rx="8" fill="#0a192f" stroke="#1e3a8a" stroke-width="1"/>
+      <text x="14" y="25" font-size="11" font-weight="700" fill="#93c5fd">1. Orders API</text>
+      <text x="14" y="44" font-size="10" font-family="monospace" fill="#cbd5e1">ord_f48bc28a3ec6</text>
+      <text x="14" y="62" font-size="10" fill="#64748b">Exact Paise (₹3,499)</text>
+    </g>
+
+    <line x1="208" y1="93" x2="228" y2="93" stroke="#3395ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+    <g transform="translate(236, 56)">
+      <rect width="180" height="74" rx="8" fill="#0a192f" stroke="#1e3a8a" stroke-width="1"/>
+      <text x="14" y="25" font-size="11" font-weight="700" fill="#93c5fd">2. Test Checkout</text>
+      <text x="14" y="44" font-size="10" font-family="monospace" fill="#34d399">pay_178c87759c5a</text>
+      <text x="14" y="62" font-size="10" fill="#64748b">Verified Settlement</text>
+    </g>
+
+    <line x1="424" y1="93" x2="444" y2="93" stroke="#3395ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+    <g transform="translate(452, 56)">
+      <rect width="168" height="74" rx="8" fill="#0a192f" stroke="#1e3a8a" stroke-width="1"/>
+      <text x="14" y="25" font-size="11" font-weight="700" fill="#93c5fd">3. HMAC Webhook</text>
+      <text x="14" y="44" font-size="10" font-family="monospace" fill="#f59e0b">payment.captured</text>
+      <text x="14" y="62" font-size="10" fill="#64748b">X-Razorpay-Signature</text>
+    </g>
+  </g>
+
+  <!-- Connection: Exec Plane to Razorpay -->
+  <path d="M 576 494 L 640 494 L 640 215 L 692 215" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrowCyan)"/>
+  <text x="648" y="360" font-size="10" font-family="monospace" fill="#38bdf8" transform="rotate(-90 648 360)">POST /v1/orders</text>
+
+  <!-- Connection: Razorpay Webhook to Learning Plane -->
+  <path d="M 1020 290 L 1020 330" fill="none" stroke="#818cf8" stroke-width="2" marker-end="url(#arrowIndigo)"/>
+
+  <!-- ==================== PLANE 2: LEARNING PLANE ==================== -->
+  <g transform="translate(700, 335)">
+    <rect width="640" height="325" rx="16" fill="url(#learnGrad)" stroke="#818cf8" stroke-width="1.5" stroke-opacity="0.6" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="640" height="42" rx="16" fill="#1e1b4b"/>
+    <path d="M 0 28 L 0 42 L 640 42 L 640 28 Z" fill="#1e1b4b"/>
+    
+    <circle cx="26" cy="21" r="8" fill="#818cf8" />
+    <text x="44" y="26" font-size="15" font-weight="700" fill="#f8fafc">2. LEARNING PLANE</text>
+    <rect x="220" y="9" width="220" height="24" rx="4" fill="#4338ca" fill-opacity="0.4"/>
+    <text x="230" y="25" font-size="11" font-weight="600" fill="#a5b4fc">AUTHORITATIVE FEEDBACK LOOP</text>
+    <text x="525" y="26" font-size="11" font-weight="500" fill="#94a3b8">Asynchronous</text>
+
+    <!-- Stage 10: Inbound Webhook -->
+    <g transform="translate(20, 56)">
+      <rect width="600" height="64" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+      <rect x="12" y="10" width="28" height="20" rx="4" fill="#6366f1"/>
+      <text x="15" y="24" font-size="11" font-weight="700" fill="#ffffff">10</text>
+      <text x="48" y="25" font-size="13" font-weight="700" fill="#e2e8f0">Cryptographic Webhook Ingestion &amp; Idempotency</text>
+      <text x="535" y="25" font-size="11" font-weight="600" fill="#818cf8">4.1ms</text>
+      <text x="14" y="48" font-size="11" fill="#94a3b8">• HMAC-SHA256 Signature Verification • Idempotent Deduplication (X-Event-Id)</text>
+    </g>
+
+    <!-- Stage 11: Outcome Feedback & Reward -->
+    <g transform="translate(20, 130)">
+      <rect width="600" height="88" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+      <rect x="12" y="10" width="28" height="20" rx="4" fill="#4f46e5"/>
+      <text x="15" y="24" font-size="11" font-weight="700" fill="#ffffff">11</text>
+      <text x="48" y="25" font-size="13" font-weight="700" fill="#e2e8f0">Outcome Feedback &amp; Gross Contribution Reward</text>
+      <text x="535" y="25" font-size="11" font-weight="600" fill="#818cf8">7.5ms</text>
+      <text x="14" y="48" font-size="11" fill="#cbd5e1">• If PAID: Reward r = Revenue - COGS (+₹1,599 gross profit) ➔ Commit stock to SOLD</text>
+      <text x="14" y="66" font-size="11" fill="#ef4444">• If ABANDONED / FAILED: Reward r = ₹0 ➔ Release reserved stock back to available</text>
+      <text x="14" y="82" font-size="10" font-family="monospace" fill="#a5b4fc">Zero financial leakage — Razorpay capture is the ONLY positive reward signal</text>
+    </g>
+
+    <!-- LinUCB Online Update -->
+    <g transform="translate(20, 228)">
+      <rect width="600" height="82" rx="8" fill="#111827" stroke="#4f46e5" stroke-width="1"/>
+      <text x="14" y="24" font-size="12" font-weight="700" fill="#c7d2fe">Disjoint LinUCB Ridge Regression Online Update</text>
+      <text x="14" y="44" font-size="11" font-family="monospace" fill="#a5b4fc">A &larr; A + x x^T  (Covariance 19x19)  |  b &larr; b + r x  (Reward Vector)  |  &theta; = A^-1 b</text>
+      <text x="14" y="64" font-size="11" fill="#94a3b8">• Anti-Temporal Leakage: Ingests only settled events (t_event &lt; t_decision)</text>
+      <text x="14" y="78" font-size="10" font-family="monospace" fill="#64748b">Persists: LearningEvidenceRecord &amp; PolicyMemoryRecord</text>
+    </g>
+  </g>
+
+  <!-- ==================== PLANE 3: GOVERNANCE PLANE ==================== -->
+  <g transform="translate(60, 680)">
+    <rect width="1280" height="230" rx="16" fill="url(#govGrad)" stroke="#34d399" stroke-width="1.5" stroke-opacity="0.6" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="1280" height="42" rx="16" fill="#064e3b"/>
+    <path d="M 0 28 L 0 42 L 1280 42 L 1280 28 Z" fill="#064e3b"/>
+
+    <circle cx="26" cy="21" r="8" fill="#34d399" />
+    <text x="44" y="26" font-size="15" font-weight="700" fill="#f8fafc">3. GOVERNANCE &amp; OBSERVABILITY PLANE</text>
+    <rect x="360" y="9" width="220" height="24" rx="4" fill="#047857" fill-opacity="0.5"/>
+    <text x="375" y="25" font-size="11" font-weight="600" fill="#a7f3d0">MERCHANT SUPERVISORY CONTROL</text>
+    <text x="1140" y="26" font-size="11" font-weight="500" fill="#94a3b8">Human / Audit Interface</text>
+
+    <!-- Governance Box 1: Next.js UI -->
+    <g transform="translate(24, 56)">
+      <rect width="390" height="154" rx="8" fill="#042f2e" stroke="#115e59" stroke-width="1"/>
+      <text x="14" y="24" font-size="13" font-weight="700" fill="#a7f3d0">Merchant AI Control Center (Next.js 16)</text>
+      <text x="14" y="46" font-size="11" fill="#cbd5e1">• Overview Dashboard (/): Real-time Verified KPIs</text>
+      <text x="14" y="66" font-size="11" fill="#cbd5e1">• AI Decisions Ledger (/decisions): 11-Stage Trace</text>
+      <text x="14" y="86" font-size="11" fill="#cbd5e1">• Policy Governance (/policies): Audit &amp; Promote</text>
+      <text x="14" y="106" font-size="11" fill="#cbd5e1">• Learning Center (/learning): LinUCB Feature Weights</text>
+      <text x="14" y="126" font-size="11" fill="#cbd5e1">• Activity Audit (/activity): Immutable Event Trail</text>
+      <text x="14" y="144" font-size="10" font-family="monospace" fill="#5eead4">Truthful Telemetry: 100% reconciled to raw SQL</text>
+    </g>
+
+    <!-- Governance Box 2: Lifecycle Promotion -->
+    <g transform="translate(434, 56)">
+      <rect width="420" height="154" rx="8" fill="#042f2e" stroke="#115e59" stroke-width="1"/>
+      <text x="14" y="24" font-size="13" font-weight="700" fill="#a7f3d0">PolicyLifecycleService &amp; Promotion Gating</text>
+      <text x="14" y="46" font-size="11" fill="#cbd5e1">• Candidate Quarantine Registry (Sandbox Evaluation)</text>
+      <text x="14" y="66" font-size="11" font-weight="600" fill="#facc15">• Rule: Learning &ne; Policy Promotion</text>
+      <text x="14" y="86" font-size="11" fill="#cbd5e1">• Statistical Gate: Sample Size N &ge; 100 Verified Orders</text>
+      <text x="14" y="106" font-size="11" fill="#cbd5e1">• Economic Gate: &Delta;Contribution Margin &gt; 0 vs Baseline</text>
+      <text x="14" y="126" font-size="11" fill="#cbd5e1">• Safety Gate: Zero margin or stock violations</text>
+      <text x="14" y="144" font-size="10" font-family="monospace" fill="#5eead4">Active Baseline Switch &amp; 1-Click Rollback</text>
+    </g>
+
+    <!-- Governance Box 3: Multi-Tenancy & DB -->
+    <g transform="translate(874, 56)">
+      <rect width="382" height="154" rx="8" fill="#042f2e" stroke="#115e59" stroke-width="1"/>
+      <text x="14" y="24" font-size="13" font-weight="700" fill="#a7f3d0">Multi-Tenant Isolation &amp; Persistence</text>
+      <text x="14" y="46" font-size="11" fill="#cbd5e1">• merch_atlas_travel (Atlas Travel Gear)</text>
+      <text x="14" y="66" font-size="11" fill="#cbd5e1">• merch_alpha (Alpha Outfitters)</text>
+      <text x="14" y="86" font-size="11" fill="#cbd5e1">• merch_95_alpha (Expedition Store)</text>
+      <text x="14" y="108" font-size="11" fill="#34d399">• Row-Level WHERE merchant_id = :id</text>
+      <text x="14" y="126" font-size="11" fill="#34d399">• Isolated LinUCB Covariance Matrices A_m, b_m</text>
+      <text x="14" y="144" font-size="10" font-family="monospace" fill="#5eead4">Cross-tenant calls reject with HTTP 404/403</text>
+    </g>
+  </g>
+
+  <!-- Inter-plane Feedback Arrow: Learning to Execution Selection -->
+  <path d="M 700 580 L 650 580 L 650 318 L 576 318" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowIndigo)"/>
+  <text x="635" y="460" font-size="10" font-family="monospace" fill="#818cf8" transform="rotate(-90 635 460)">Online Weights &theta;</text>
+
+  <!-- Inter-plane Feedback Arrow: Governance to Execution Safety -->
+  <path d="M 644 680 L 644 620 L 300 620 L 300 494" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowEmerald)"/>
+  <text x="440" y="612" font-size="10" font-family="monospace" fill="#34d399">Governed Active Baseline Policy</text>
+
+</svg>

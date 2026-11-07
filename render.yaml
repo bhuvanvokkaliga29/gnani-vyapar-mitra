@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: vyapar-mitra-api
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt && pip install -e . && python scripts/seed_vastram_dataset.py"
+    startCommand: "uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./test.db
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GNANI_SPEECH_API_KEY
+        sync: false
+      - key: WHATSAPP_TEST_MERCHANT_PHONE
+        value: "+919113960498"
+      - key: WHATSAPP_DEFAULT_MERCHANT_ID
+        value: merch_atlas_travel

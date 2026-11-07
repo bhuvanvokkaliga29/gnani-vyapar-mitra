@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Test Mode Checkout Harness</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 32px; max-width: 500px; width: 100%; border: 1px solid #e2e8f0; }
+        h2 { color: #0f172a; margin-top: 0; font-size: 22px; }
+        p { color: #64748b; font-size: 14px; line-height: 1.5; }
+        .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 999px; font-weight: 600; font-size: 12px; margin-bottom: 16px; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px; }
+        input { width: 100%; padding: 10px 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 14px; box-sizing: border-box; font-family: monospace; }
+        button { width: 100%; background: #2563eb; color: white; padding: 12px; border: none; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; transition: background 0.15s; margin-top: 8px; }
+        button:hover { background: #1d4ed8; }
+        .test-card-box { background: #f1f5f9; border-left: 4px solid #3b82f6; padding: 12px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 13px; color: #334155; }
+        .status-box { margin-top: 20px; padding: 12px; border-radius: 6px; display: none; font-size: 14px; font-weight: 500; }
+        .status-success { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+    </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+<div class="card">
+    <div class="badge">RAZORPAY TEST MODE</div>
+    <h2>Merchant Policy Agent Checkout</h2>
+    <p>Use this harness to execute an authentic Razorpay Test Mode checkout for an order created by the application.</p>
+
+    <div class="form-group">
+        <label for="key_id">Razorpay Key ID (rzp_test_...)</label>
+        <input type="text" id="key_id" placeholder="rzp_test_...">
+    </div>
+
+    <div class="form-group">
+        <label for="order_id">Razorpay Order ID (order_...)</label>
+        <input type="text" id="order_id" placeholder="order_...">
+    </div>
+
+    <div class="form-group">
+        <label for="amount">Amount (paise)</label>
+        <input type="number" id="amount" value="10000">
+    </div>
+
+    <div class="test-card-box">
+        <strong>Test Card Credentials:</strong><br>
+        Card Number: <code>4012 0000 0000 0002</code><br>
+        Expiry: <code>12/28</code> | CVV: <code>123</code> | OTP: <code>123456</code>
+    </div>
+
+    <button id="pay-btn" onclick="launchCheckout()">Pay with Razorpay Test Mode</button>
+
+    <div id="status" class="status-box"></div>
+</div>
+
+<script>
+    // Pre-populate from URL query parameters if present
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('key_id')) document.getElementById('key_id').value = urlParams.get('key_id');
+    if (urlParams.get('order_id')) document.getElementById('order_id').value = urlParams.get('order_id');
+    if (urlParams.get('amount')) document.getElementById('amount').value = urlParams.get('amount');
+
+    function launchCheckout() {
+        const keyId = document.getElementById('key_id').value.trim();
+        const orderId = document.getElementById('order_id').value.trim();
+        const amount = parseInt(document.getElementById('amount').value, 10);
+
+        if (!keyId || !orderId) {
+            alert("Please provide both Razorpay Key ID and Order ID.");
+            return;
+        }
+
+        const options = {
+            "key": keyId,
+            "amount": amount,
+            "currency": "INR",
+            "name": "Merchant Policy Agent",
+            "description": "Test Mode Commercial Transaction",
+            "order_id": orderId,
+            "handler": function (response) {
+                const statusBox = document.getElementById('status');
+                statusBox.className = "status-box status-success";
+                statusBox.style.display = "block";
+                statusBox.innerHTML = `
+                    <strong>Payment Succeeded in Test Mode!</strong><br>
+                    Payment ID: <code>${response.razorpay_payment_id}</code><br>
+                    Order ID: <code>${response.razorpay_order_id}</code><br>
+                    Signature: <code>${response.razorpay_signature}</code><br><br>
+                    <div id="reconcile-status" style="margin-top: 10px; padding: 8px; background: #eff6ff; border-radius: 6px; border: 1px solid #bfdbfe; font-size: 13px; color: #1e40af;">
+                        <em>Synchronizing transaction with Closed-Loop Learning Engine...</em>
+                    </div>
+                `;
+
+                // Automatically reconcile with backend to advance the closed-loop engine
+                const apiBase = (window.location.port === '3000' || window.location.port === '3001') ? 'http://localhost:8000' : '';
+                fetch(`${apiBase}/api/v1/orders/${encodeURIComponent(response.razorpay_order_id)}/reconcile`, { method: 'POST' })
+                    .then(res => res.json())
+                    .then(data => {
+                        const recBox = document.getElementById('reconcile-status');
+                        if (recBox) {
+                            recBox.style.background = "#dcfce7";
+                            recBox.style.borderColor = "#86efac";
+                            recBox.style.color = "#15803d";
+                            recBox.innerHTML = `<strong>✓ Closed-Loop Pipeline Synchronized:</strong> Order <code>${data.id}</code> is confirmed PAID. Evidence, reward, memory, and model update applied!<br><br><a href="http://localhost:3000/decisions" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 13px;">Open Merchant Control Center &rarr;</a>`;
+                        }
+                    })
+                    .catch(err => {
+                        const recBox = document.getElementById('reconcile-status');
+                        if (recBox) {
+                            recBox.innerHTML = `<em>Note: Razorpay signed webhook will dispatch in test mode.</em>`;
+                        }
+                    });
+            },
+            "prefill": {
+                "name": "AI Buyer Agent",
+                "email": "ai.buyer@example.com",
+                "contact": "9999999999"
+            },
+            "theme": { "color": "#2563eb" }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    }
+</script>
+
+</body>
+</html>
