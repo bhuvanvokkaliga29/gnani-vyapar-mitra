@@ -1,456 +1,475 @@
-<div align="center">
+# Vyapar Mitra — Har Dukaan Ka Apna Mitra
+### *Autonomous Multilingual Business Growth Agent & Conversational Voice AI Companion for India's Independent Retailers*
 
-# 🇮🇳 Vyapar Mitra — Har Dukaan Ka Apna Mitra
-### *AI-Powered Multilingual Business Growth Agent & Conversational Voice Doctor for India's Independent Merchants & Retailers*
+[![Live Application](https://img.shields.io/badge/Live_App-Vercel_Production-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://gnani-vyapar-mitra-apps.vercel.app/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-gnani--vyapar--mitra-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra)
+[![Gnani Speech Platform](https://img.shields.io/badge/Gnani_AI-Speech_Platform_v3.0-FF6F00?style=for-the-badge&logo=soundcharts&logoColor=white)](https://gnani.ai/)
+[![Gnani Prisma STT](https://img.shields.io/badge/Gnani_Prisma_STT-v3.0_Indic_Auto-00C853?style=for-the-badge)](https://api.vachana.ai)
+[![Gnani Timbre TTS](https://img.shields.io/badge/Gnani_Timbre_TTS-Voice:_Lakshmi_&_Avinash-7C4DFF?style=for-the-badge)](https://api.vachana.ai)
+[![Gnani Inya Agent Platform](https://img.shields.io/badge/Gnani_Inya-Agent_Builder_7bd15e-blue?style=for-the-badge)](https://api.inya.ai/platform)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-Conversational_Reasoning-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.3.4_Turbopack-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111.0_Async-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 
-[![Gnani AI Internship Challenge 2026](https://img.shields.io/badge/Gnani_AI_Challenge_2026-Speech_AI_Agent-FF6F00?style=for-the-badge&logo=soundcharts&logoColor=white)](https://gnani.ai)
-[![Gnani Prisma STT v3.0](https://img.shields.io/badge/Gnani_Prisma_STT-v3.0_Indic_Auto-00C853?style=for-the-badge&logo=google-cloud&logoColor=white)](https://api.vachana.ai)
-[![Gnani Timbre TTS v3.0](https://img.shields.io/badge/Gnani_Timbre_TTS-Voice:_Lakshmi-7C4DFF?style=for-the-badge&logo=soundcharts&logoColor=white)](https://api.vachana.ai)
-[![Razorpay Integration](https://img.shields.io/badge/Razorpay-Verified_Settlements-0C2340?style=for-the-badge&logo=razorpay&logoColor=3395FF)](https://razorpay.com)
-[![Next.js 16](https://img.shields.io/badge/Next.js-16.3.4_Turbopack-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.111.0-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+---
 
-<br/>
+## 1. Executive Summary & Problem Statement
 
-**Vyapar Mitra is an AI-powered, multilingual business growth agent designed for India's independent retailers and SMEs.**
+Independent retail merchants and small-to-medium enterprises (MSMEs) form the backbone of commerce across India. However, these shop owners face critical operational and structural challenges:
 
-It features a native **AI Voice Doctor** powered by **Gnani AI's Prisma (STT v3.0)** and **Timbre (TTS v3.0)**, allowing merchants to speak naturally in **Kannada, Hindi, English, and code-mixed Indian languages (Kanglish)** to inspect daily sales, identify dead inventory, receive reorder alerts, and govern multi-channel pricing.
+1. **High Marketplace Commissions & Take-Rates:** Dominant e-commerce aggregators (Amazon India, Flipkart, Meesho) levy commissions, closing fees, return penalties, and advertising charges that consume 15% to 40% of gross transaction value compared to direct-to-consumer channels.
+2. **Data & Analytics Barriers:** Most small business owners do not employ dedicated business intelligence analysts or financial accountants. Traditional ERP dashboards and spreadsheets are rigid, English-only, and complex to navigate.
+3. **Dead Inventory & Margin Erosion:** Without proactive stock monitoring, working capital remains trapped in slow-moving items, while popular SKUs suffer unmonitored stockouts.
+4. **Language & Communication Gap:** Merchants routinely think, converse, and negotiate in regional Indian languages (Kannada, Hindi, Telugu, Tamil) and colloquial code-mixed dialects (Kanglish, Hinglish). Conventional software requires text entry and English proficiency.
 
-*Demonstration Retailer*: **Vastram** (Ethnic apparel, sarees, and fashion retail operating across WhatsApp Direct, D2C Web, and Amazon India).
+### The Vyapar Mitra Solution
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                           VYAPAR MITRA CORE INVARIANT                                        │
-│                                                                                                             │
-│   Voice Doctor Diagnoses ➔ LLM Proposes ➔ Code Validates ➔ Razorpay Executes ➔ Model Learns ➔ Owner Governs │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+**Vyapar Mitra ("Every Shop's Companion")** is an autonomous, multilingual conversational voice agent and commercial growth copilot. Designed as an in-house "Business Doctor", Vyapar Mitra enables merchants to speak naturally to their business.
+
+Built upon **Gnani AI's Speech AI Platform (Prisma STT v3.0, Timbre TTS v3.0, and Inya Agent Platform)** and **Google Gemini Reasoning**, Vyapar Mitra accurately transcribes regional speech, computes exact commercial metrics using deterministic arithmetic, resolves inventory risks, models multi-channel profit arbitrage, and answers business queries in spoken regional audio.
+
+---
+
+## 2. Gnani AI Conversational Voice Engine (Prisma STT, Timbre TTS & Inya Platform)
+
+At the heart of Vyapar Mitra is a deep, first-class integration with **Gnani AI**, India's leading conversational Speech AI platform built specifically for Indian languages and accents.
+
+```mermaid
+flowchart LR
+    subgraph MerchantSpeech ["Merchant Spoken Input"]
+        Audio["Regional Voice Input<br/>(Kannada, Hindi, English, Kanglish)"]
+    end
+
+    subgraph GnaniInbound ["Gnani AI Inbound Speech Pipeline"]
+        Prisma["Gnani Prisma STT v3.0<br/>(api.vachana.ai/stt/v3)<br/>• Model: prisma-v3.0<br/>• Mode: indic-auto LID<br/>• Latency: Sub-second"]
+    end
+
+    subgraph ReasoningCore ["Core Business Reasoning"]
+        Engine["DoctorAdvisorAgent<br/>+ Deterministic SQL BI<br/>+ Google Gemini 3.1"]
+    end
+
+    subgraph GnaniOutbound ["Gnani AI Outbound Speech Pipeline"]
+        Timbre["Gnani Timbre TTS v3.0<br/>(api.vachana.ai/api/v1/tts/inference)<br/>• Model: timbre-v3.0<br/>• Voice: Lakshmi (Indic/Kannada)<br/>• Voice: Avinash (Executive)"]
+    end
+
+    subgraph GnaniPlatform ["Gnani Inya Enterprise Platform"]
+        Inya["Gnani Agent Builder<br/>• Bot ID: 7bd15e5ff5a7411db02665f468d3353a<br/>• api.inya.ai/platform<br/>• Telephony & Callbacks"]
+    end
+
+    Audio --> Prisma
+    Prisma --> Engine
+    Engine --> Timbre
+    Engine <--> Inya
+    Timbre --> Playback["Native Web / WhatsApp Audio Playback"]
 ```
 
-<br/>
+### 1. Gnani Prisma STT (v3.0) — Automatic Speech Recognition
+- **Official API Endpoint:** `https://api.vachana.ai/stt/v3`
+- **Model:** `prisma-v3.0`
+- **Zero-Configuration Language Detection (`indic-auto`):** Dynamically identifies the spoken Indian language (Kannada `kn`, Hindi `hi`, Indian English `en-IN`, and code-mixed Kanglish) without requiring the merchant to manually toggle language switches in the UI.
+- **Acoustic Robustness for Indian Retail:** Engineered to tolerate noisy retail shop environments (street traffic, background chatter, ceiling fans) and colloquial spoken patterns (e.g., *"Ivattu sales eshtu aagide?"*, *"Kharche kitna hua?"*, *"Yav SKU reorder madbeku?"*).
+- **Domain Entity Extraction:** High-fidelity transcription of currency numbers, units, sizes, and Indian apparel terminology (Linen Shirts, Sarees, Kurtas, Nehru Jackets).
 
-[Executive Summary](#-executive-summary) •
-[Gnani AI Voice Architecture](#-gnani-ai-voice-architecture) •
-[Architecture Invariants](#-golden-architectural-invariants) •
-[AI Voice Doctor Walkthrough](#-ai-voice-doctor--speech-walkthrough) •
-[Quickstart (60s)](#-clean-room-quickstart--verification-60-seconds) •
-[System Architecture](#-end-to-end-system-architecture)
+### 2. Gnani Timbre TTS (v3.0) — Neural Speech Synthesis
+- **Official API Endpoint:** `https://api.vachana.ai/api/v1/tts/inference`
+- **Model:** `timbre-v3.0`
+- **Neural Voice Profiles:**
+  - **`Lakshmi` (Primary Indic / Kannada Voice):** Delivers natural, warm, and conversational spoken briefings with authentic regional intonation, respectful cadence, and accurate pronunciation of Indian numbering (lakhs, thousands, rupees).
+  - **`Avinash` (Executive / Bilingual Voice):** Provides crisp, authoritative executive financial briefings in Indian English and Hindi.
+- **Base64 Audio Streaming:** Audio is synthesized directly into high-clarity MP3/WAV streams and returned as base64 payloads to the client for immediate, low-latency browser playback without intermediate buffering stalls.
 
-</div>
-
----
-
-## 🎙️ Gnani AI Voice Architecture
-
-Vyapar Mitra provides voice interaction built on Gnani AI's official speech platform:
-- **Gnani Prisma STT (v3.0)**: Connects to `https://api.vachana.ai/stt/v3` with streaming audio payloads. Supports Kannada, Hindi, English, and automatic language detection (`indic-auto`). Accurately transcribes colloquial code-mixed queries like *"Ivattu sales eshtu?"* with sub-250ms latency.
-- **Gnani Timbre TTS (v3.0)**: Connects to `https://api.vachana.ai/api/v1/tts/inference` generating high-clarity spoken audio. Uses the verified `Lakshmi` neural voice for Kannada retail briefings and `Avinash` for executive reports.
-- **Dual-Engine Business Intelligence**: Financial calculations (gross margins, profit, dead stock days, reorder thresholds) are strictly computed by deterministic Python services using integer paise arithmetic. Google Gemini formats and reasons about verified metrics without hallucinating figures.
-- **Merchant Callback Governance**: Merchants can request daily telephony callback briefings (`MerchantCallbackRequest`) or trigger governed actions (`OwnerApprovalItem`) with mandatory margin floor checks.
-
----
-
-## 📌 Executive Summary
-
-Modern independent retail merchants in India face an existential double-squeeze:
-1. **The Autonomous AI Buyer Disruption**: Procurement bots and autonomous shopping assistants (Claude Desktop, ChatGPT Shopping Swarms) evaluate hard specifications, budget ceilings, and delivery timelines across dozens of merchants simultaneously in milliseconds. Static retail pricing loses deals; unconstrained LLM negotiation causes catastrophic margin destruction through hallucinated discounts or oversold physical inventory.
-2. **The 15%–25% Marketplace Commission Bleed**: Dominant marketplace aggregators (Amazon India, Flipkart, Meesho) levy punitive take-rates (referral fees, fixed closing fees, mandatory reverse logistics reserves, and high advertising TACoS), eroding up to **40% of gross revenue** compared to direct customer channels.
-
-**Vastram Commerce** resolves these challenges through a strictly decoupled, dual-engine commercial architecture:
-- **Advisory Strategy Generation (Dual-Engine)**: A specialized commercial reasoning engine powered by **Google Gemini** (`gemini-1.5-flash`) proposes tailored commercial candidate strategies (complementary bundles, volume incentives, clearance options). If the LLM is unconfigured or offline, it transparently falls back to deterministic heuristic generation.
-- **Deterministic Validation & Policy Gates**: Hardcoded Python validation gates enforce non-negotiable merchant bounds (minimum **18.00% gross margin floor**, maximum **20.00% discount ceiling**, integer stock locks).
-- **Authoritative Razorpay Financial Truth**: Validated proposals generate authentic Razorpay Test Mode orders (`ord_...`) via HMAC-SHA256 signed single-use execution tokens.
-- **Closed-Loop Online Reinforcement Learning**: Verified cryptographic webhook events (`payment.captured`) feed an online **Contextual Linear Upper Confidence Bound (LinUCB)** multi-armed bandit algorithm. Unpaid or abandoned checkouts yield ₹0 reward—the model never trains on uncollected revenue.
-- **Bi-Directional WhatsApp Web Operator**: A live conversational agent operating over WhatsApp Web with strict single-number privacy whitelisting, multilingual NLU, typo tolerance, order lookups, and autonomous quad-media dispatch (PDF, charts, playable neural voice notes).
+### 3. Gnani Inya Agent Platform / Agent Builder Integration
+- **Platform Base URL:** `https://api.inya.ai/platform`
+- **Bot Identifier:** `7bd15e5ff5a7411db02665f468d3353a`
+- **Dual-Mode Orchestration:** The backend (`apps/api/routers/gnani_agent.py` and `apps/api/routers/voice.py`) supports dual execution:
+  - **Fast-Doctor Mode:** Directly couples Gnani Prisma STT $\rightarrow$ Deterministic BI $\rightarrow$ Gemini Reasoning $\rightarrow$ Gnani Timbre TTS for ultra-low latency interactive dialogue.
+  - **Agent Builder Mode:** Routes calls through the enterprise Gnani Inya platform for structured conversational workflows, multi-clerk routing, and outbound telephony callback sessions (`MerchantCallbackRequest`).
 
 ---
 
-## 🏛️ Golden Architectural Invariants
+## 3. Key Features & Capabilities
 
-| # | Invariant | Technical Enforcement Mechanism | Failure Mode Prevented |
-| :--- | :--- | :--- | :--- |
-| **1** | **LLM Advisory Only** | Generative models *only propose* candidates; deterministic code *audits, authorizes, and executes*. | Hallucinated below-cost pricing or unauthorized discounts reaching buyers. |
-| **2** | **Integer Paise Arithmetic** | All monetary amounts stored and computed strictly as integer `paise` (1 INR = 100 paise) via `Decimal` margins. | IEEE-754 floating-point rounding errors and fractional paise leakage over high volume. |
-| **3** | **Single-Use Execution Tokens** | HMAC-SHA256 cryptographic tokens bound to `decision_id`, `opportunity_id`, amount, and a 15-minute lease. | Replay attacks, front-running, token reuse, and price tampering. |
-| **4** | **Authoritative Webhook Truth** | Only cryptographically verified Razorpay webhooks (`payment.captured`) trigger learning reward updates ($r = \text{Revenue} - \text{COGS}$). | Policy reinforcement from abandoned checkouts, failed payments, or simulated signals. |
-| **5** | **Strict Multi-Tenant Isolation** | All SQL queries enforce merchant tenant foreign keys; LinUCB models train per-merchant. | Cross-merchant data leakage, competitor policy contamination, and data poisoning. |
-| **6** | **Zero Direct AI Authority & Firewall** | External AI buyers can only *REQUEST*; code *AUTHORIZES*. Unit economics (COGS, wholesale costs) are strictly concealed behind an Egress Data Firewall. | Exploitative prompt-injections, pricing extraction, and unauthorized merchant balance drains. |
-| **7** | **Strict Sender Whitelist Isolation** | Inbound WhatsApp gateway strictly verifies incoming phone numbers against the authorized merchant (`+919113960498`). | Unauthorized contacts, strangers, or friends receiving automated replies or accessing business data. |
+### Real-Time Conversational Voice Companion
+- **Multilingual Code-Switching:** Seamlessly understands and responds in **Kannada, Hindi, English**, and mixed speech (**Kanglish**, Hinglish) without requiring manual language toggling.
+- **Low-Latency Speech Processing:** Fast audio chunk streaming with sub-second speech transcription via Gnani Prisma STT v3.0.
+- **Natural Neural Spoken Audio:** Synthesizes clear, regional spoken responses via Gnani Timbre TTS v3.0 using the `Lakshmi` (Kannada/Indic) and `Avinash` (Executive) neural voices.
+- **Context-Aware Turn-Taking & Interruption:** Maintains conversational flow, resolves multi-turn pronouns (*"What is its profit margin?"*), and recovers gracefully from pauses and speech interruptions.
 
----
+### Deterministic Financial & Commercial Intelligence
+- **Zero Financial Hallucination:** Numerical computations (daily revenue, gross margin, net profit, holding cost, and reorder levels) are executed by deterministic SQL and Python services in integer paise (1 INR = 100 paise). The LLM is strictly used for conversational explanation and advice formatting.
+- **12 Verified Commercial Diagnostic Areas:**
+  1. *Today's Sales & Paid Transactions*
+  2. *Total Cumulative Revenue*
+  3. *Gross Profit vs. Net Margin*
+  4. *Top-Selling Products by Volume & Revenue*
+  5. *Critical Low-Stock & Out-of-Stock Warnings*
+  6. *Recommended Reorder Quantities*
+  7. *Operating Costs, Spend & COGS*
+  8. *Period-over-Period Performance (Today vs. Yesterday)*
+  9. *Monthly Financial Performance*
+  10. *Slow-Moving & Dead Inventory Diagnostics*
+  11. *Store-Level and SKU-Level Margin Percentages*
+  12. *Total Trapped Inventory Valuation*
 
-## 🌟 Feature Showcase (The 6 Pillars)
+### Multi-Channel Profit Arbitrage
+- **Channel Unit Economics:** Computes realized net contribution after platform commission, fixed closing fees, forward logistics, reverse logistics (RTO), and ad spend.
+- **Direct WhatsApp & ONDC Arbitrage:** Demonstrates exact profit gains from shifting repeat buyers from marketplaces (Amazon/Flipkart) to Direct WhatsApp and ONDC open networks.
 
-### 1. Autonomous WhatsApp Web Merchant Copilot (Live & Whitelisted)
-
-A real-time, bi-directional conversational agent connecting the merchant's mobile WhatsApp to the Vastram core database and policy engine via `whatsapp-web.js`.
-
-```text
-📱 Merchant WhatsApp (+919113960498) 
-         ↕️ (Encrypted Inbound/Outbound Messages & Voice Notes)
-🤖 WhatsApp Web Connector Daemon (Node.js + whatsapp-web.js)
-         ↕️ [Strict Sender Whitelist: Drops Unauthorized Contacts Silently]
-📡 FastAPI Backend Engine (/api/v1/whatsapp/connector-inbound)
-         ↕️ (NLU Intent Parsing + SQLite Database + Policy Guardrails)
-📦 Multi-Media Dispatcher: Text Ledger + PDF Report + 4 Dark Navy Charts + Playable Audio
-```
-
-#### Key Capabilities:
-- **🔒 Strict Single-Number Whitelist**: Exclusively responds to the authorized merchant phone (**`+919113960498`** / authorized LIDs). All messages from any other contact, friend, or group texting the host phone are silently dropped with **zero reply sent**.
-- **🗣️ Inbound Voice Note Processing**: The merchant can speak directly into WhatsApp! The connector detects audio/voice notes (`type === 'ptt'` / `type === 'audio'`), forwards them to the backend, and replies with both detailed text and a **playable audio voice summary**.
-- **🎙️ Playable Microsoft Neural Audio (MP3)**: Executive summaries are synthesized using Microsoft Edge Neural TTS (`en-IN-NeerjaExpressiveNeural`, `hi-IN-MadhurNeural`, `kn-IN-GaganNeural`). Sent as standard in-chat playable audio tracks (`audio/mpeg`), opening and playing natively on iOS and Android with scrub bar, duration, and play button.
-- **📑 Official PDF Sales Ledger**: Automatically generates high-density PDF sales ledgers via ReportLab featuring financial KPIs, catalog inventory margin health, and verified transactions.
-- **📈 4 High-Resolution Visual Dashboards (PNG)**: Dark navy executive charts generated on-the-fly:
-  1. `Vastram_Sales_Dashboard.png` — Sales & revenue split (Prepaid vs COD) & SKU margins vs 18% floor.
-  2. `Vastram_Marketplace_Comparison.png` — Realized net margin ranking & platform take-rate per ₹2,000 order.
-  3. `Vastram_Payment_Failure_Analysis.png` — Root cause breakdown donut & 4-stage recovery funnel.
-  4. `Vastram_Inventory_Health.png` — SKU stock units vs safety buffer reorder points.
-- **📦 Real-Time Dedicated Order Lookups**: Responds to `order 9841`, `ord_vast_9841`, `oder 9840`, `#9839`, `order 1`, pulling live customer names, contact numbers, delivery addresses, product details, Razorpay status (PAID/COD), and courier tracking (*Out for Delivery*, *Shipped via BlueDart*).
-- **⚠️ Payment Failure & RTO Intelligence**: Analyzes checkout drop-offs, calculates lost revenue (₹6,497 across 3 cancelled orders), breaks down root causes (UPI timeout 45%, 3DS drop 25%, COD rejection 30%), and issues auto-generated **1-Click Razorpay Smart Collect recovery links** (`https://rzp.io/i/recover-vastram`).
-- **🔤 Typo-Tolerant Multilingual NLU**: Normalizes merchant typos and slang in English, Kannada (ಕನ್ನಡ), and Hindi (हिंदी) (`seles` → sales, `flpkart` → flipkart, `amazn` → amazon, `buiness statergy` → strategy, `oder 9841` → order 9841, `failur` → failure).
+### Autonomous Policy Governance & Safety Gates
+- **Margin Floor Protection:** Enforces non-negotiable policy constraints (minimum 18.00% gross margin floor, maximum 20.00% discount ceiling, integer inventory locking).
+- **Single-Use Execution Leases:** Price changes and promotional bundles require single-use HMAC-SHA256 authorization tokens with 15-minute expiration windows.
+- **Model Context Protocol (MCP 2026):** Exposes catalog and checkout tools to external AI shopping agents while enforcing a strict outbound data firewall to safeguard wholesale COGS.
 
 ---
 
-### 2. Multi-Channel Marketplace Growth Manager
+## 4. Technology Stack
 
-Computes exact unit economics and channel margin rankings across all major Indian retail channels in integer paise:
-
-$$\text{Net Contribution} = \text{Price} - \text{COGS} - \text{Platform Fees} - \text{Shipping} - \text{Expected RTO Loss} - \text{Ad CAC}$$
-
-#### Channel Economics & Profit Arbitrage Matrix:
-
-| Channel | Platform Fee | Logistics | Return / RTO Rate | Ad CAC | Realized Net Margin | Merchant Profit per ₹2,099 Shirt |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **⭐ Direct WhatsApp Store** | **2.00%** (Gateway) | ₹50 | **5.00%** | ₹80 | **34.20%** | **₹1,269 / unit** (Highest Margin!) |
-| **🌐 ONDC Open Network** | **4.50%** (Beckn Fee) | ₹45 | **7.00%** | ₹20 | **30.50%** | **₹1,142 / unit** (+11% vs Amazon) |
-| **📦 Meesho Value Marketplace** | **0.00%** (Zero Comm.) | ₹60 | **22.00%** (High!) | ₹30 | **26.50%** | **₹985 / unit** (Clearance only) |
-| **🏷️ Flipkart Marketplace** | **14.00%** + ₹20 fixed | ₹65 | **16.00%** | ₹110 | **21.20%** | **₹732 / unit** (Tier-2/3 volume) |
-| **🛍️ Amazon India** | **15.00%** + ₹25 closing | ₹70 | **18.00%** | ₹120 | **19.40%** | **₹829 / unit** (High volume, high fees) |
-
-> **💡 The Profit Arbitrage Insight**: Selling a ₹2,099 Olive Linen Shirt directly via WhatsApp yields **₹1,269 profit** vs **₹829 on Amazon**—putting **+₹440 extra cash per shirt** in the merchant's pocket. Shifting just 30 repeat buyers a month to WhatsApp recovers **₹13,200/month** in saved commissions!
+| Layer | Technology | Details / Purpose |
+|---|---|---|
+| **Speech-to-Text (STT)** | **Gnani AI Prisma STT v3.0** | Official low-latency speech recognition with `indic-auto` language identification and retail acoustic tuning. |
+| **Text-to-Speech (TTS)** | **Gnani AI Timbre TTS v3.0** | Neural multi-speaker speech synthesis featuring `Lakshmi` (Kannada/Indic) and `Avinash` (Executive) voices. |
+| **Enterprise Speech Bot** | **Gnani Inya Platform** | Agent Builder Bot (`7bd15e5ff5a7411db02665f468d3353a`) for enterprise telephony and multi-turn workflows. |
+| **Conversational LLM** | **Google Gemini API** | Structured reasoning (`gemini-3.1-flash-lite-preview` / `gemini-flash-lite-latest`) with deterministic heuristic fallbacks. |
+| **Frontend Framework** | **Next.js 16.3.4 (App Router)** | High-performance React 19 framework utilizing Turbopack for sub-second builds. |
+| **Styling & Icons** | **Tailwind CSS 4, Lucide React** | High-contrast dark-mode design tokens and accessible retail iconography. |
+| **Backend Framework** | **FastAPI 0.111.0 (Python 3.11+)** | Asynchronous ASGI REST API framework with Pydantic v2 data validation. |
+| **Database & ORM** | **SQLite / aiosqlite, SQLAlchemy 2.0** | Asynchronous relational persistence with foreign-key tenant isolation. |
+| **Payment Integration** | **Razorpay Test Mode** | Verified order creation, webhook handling (`payment.captured`), and HMAC verification. |
+| **Protocol Standards** | **Anthropic MCP (2026 Spec)** | Standards-compliant Model Context Protocol server exposing catalog tools. |
+| **Cloud Hosting** | **Vercel (Frontend), Render (Backend)** | Globally distributed frontend CDN connected to containerized Python API. |
 
 ---
 
-### 3. Growth Doctor & Action Radar Diagnostics
+## 5. System Architecture
 
-An automated commercial diagnostic service (`services/growth_doctor/`) continuously auditing catalog velocity, inventory health, and margin leaks:
-- **Dead Stock Discovery**: Flags slow-moving inventory (e.g. *Charcoal Grey Trousers* with 40 units trapped) and computes monthly capital holding costs.
-- **Margin Leakage Audits**: Scans active discounts against target policies, flagging SKUs discounted below the 18% policy floor.
-- **One-Tap Action Radar**: Generates actionable, one-tap clearance bundles and promotional actions requiring explicit merchant confirmation before activation.
+```mermaid
+flowchart TD
+    subgraph ClientLayer ["Client Layer (Merchant & External AI)"]
+        Browser["Desktop & Mobile Browser<br/>(Next.js 16 Web Cockpit)"]
+        Mic["Microphone Audio Capture<br/>(Web Audio API / VAD)"]
+        ExtAI["External AI Shopping Agents<br/>(Claude Desktop / MCP Clients)"]
+    end
 
----
+    subgraph FrontendApp ["Frontend Application (Vercel)"]
+        UI_Voice["Voice Agent Room<br/>(/voice-agent)"]
+        UI_Doctor["Growth Doctor BI<br/>(/doctor)"]
+        UI_Dash["Executive Cockpit<br/>(/orders, /products, /policies)"]
+        AudioPlayer["Web Audio Player<br/>(Base64 MP3 Decoder)"]
+    end
 
-### 4. Closed-Loop Razorpay Reinforcement Learning (LinUCB Bandit)
+    subgraph APIGateway ["Backend API Services (Render)"]
+        FastAPI["FastAPI 0.111.0 Gateway<br/>(Uvicorn ASGI Engine)"]
+        Router_Voice["Voice Router<br/>(/api/v1/voice)"]
+        Router_Gnani["Gnani Agent Router<br/>(/api/v1/gnani_agent)"]
+        Router_Doctor["Doctor Router<br/>(/api/v1/growth_doctor)"]
+        Router_MCP["MCP 2026 Server<br/>(/api/v1/mcp)"]
+        Firewall["Outbound Egress Firewall<br/>(Strips Wholesale COGS)"]
+    end
 
-The system treats commercial policy optimization as a Contextual Multi-Armed Bandit problem:
-- **Context Vector ($x_t \in \mathbb{R}^{19}$)**: Encodes customer channel, item category, price point, inventory depth, and historical velocity.
-- **Candidate Arms ($a \in \mathcal{A}$)**: `SINGLE_PRODUCT`, `COMPLEMENTARY_BUNDLE`, `BOUNDED_DISCOUNT`, `NO_OFFER`.
-- **Upper Confidence Bound Scoring**:
-  
-$$a_t = \arg\max_{a} \left( x_t^T \hat{\theta}_a + \alpha \sqrt{x_t^T A_a^{-1} x_t} \right)$$
+    subgraph GnaniEcosystem ["Gnani AI Speech Intelligence Hub"]
+        Gnani_STT["Gnani Prisma STT v3.0<br/>(api.vachana.ai/stt/v3)<br/>indic-auto LID"]
+        Gnani_TTS["Gnani Timbre TTS v3.0<br/>(api.vachana.ai/api/v1/tts/inference)<br/>Voices: Lakshmi / Avinash"]
+        Gnani_Inya["Gnani Inya Platform<br/>(api.inya.ai/platform)<br/>Bot: 7bd15e5ff5a7411db02665f468d3353a"]
+    end
 
-- **Authoritative Feedback**: When Razorpay emits `payment.captured`, the bandit receives reward $r = \text{Revenue} - \text{COGS}$ and updates covariance $A_a \leftarrow A_a + x_t x_t^T$ and bias $b_a \leftarrow b_a + r x_t$. Unpaid orders yield $r = 0$.
+    subgraph CoreServices ["Core Business & Intelligence Services"]
+        DoctorAgent["DoctorAdvisorAgent<br/>(Conversational Orchestrator)"]
+        SQL_BI["Deterministic SQL BI Service<br/>(Paise Arithmetic & Margin Math)"]
+        PolicyEngine["Policy & Safety Validator<br/>(18% Margin Floor Gate)"]
+        Gemini_API["Google Gemini Reasoning<br/>(ai.google.dev)"]
+    end
 
----
+    subgraph DataStorage ["Data Persistence Layer"]
+        DB[(SQLite Async Database<br/>Catalog, Orders, Inventory)]
+        Razorpay_API["Razorpay Payment Gateway<br/>(api.razorpay.com)"]
+    end
 
-### 5. Model Context Protocol (MCP 2026) for External AI Buyers
+    %% Client to Frontend
+    Mic --> UI_Voice
+    Browser --> UI_Voice
+    Browser --> UI_Doctor
+    Browser --> UI_Dash
 
-Implements the Anthropic Model Context Protocol (MCP 2026), turning the merchant's catalog into a native peer for external shopping agents (such as **Claude Desktop**):
-- **FastMCP Transport**: Accessible over Stdio, JSON-RPC 2.0, and HTTP Server-Sent Events (`/api/v1/mcp/sse`).
-- **6 Core MCP Tools**: `search_catalog`, `get_product`, `evaluate_buyer_intent`, `get_offer`, `request_checkout`, `get_order_status`.
-- **Egress Data Firewall**: Intercepts all outgoing MCP payloads, stripping internal wholesale COGS, supplier info, and margin formulas to prevent exploitative price extraction.
+    %% Frontend to Backend
+    UI_Voice -->|Audio Blob / WebRTC| Router_Voice
+    UI_Doctor -->|REST Requests| Router_Doctor
+    AudioPlayer <---|Base64 Audio Stream| Router_Voice
 
----
+    %% External AI
+    ExtAI -->|MCP JSON-RPC 2.0| Router_MCP
+    Router_MCP --> Firewall
 
-### 6. Next.js 16 Dark-Mode Operator Control Center
+    %% Routing inside Backend
+    FastAPI --> Router_Voice
+    FastAPI --> Router_Gnani
+    FastAPI --> Router_Doctor
+    FastAPI --> Router_MCP
 
-A high-performance operations dashboard (`apps/web`) built with Next.js 16 and Tailwind-free vanilla CSS design tokens:
-- **Executive KPI Cockpit**: Real-time revenue, prepaid vs COD ratio, realized contribution, and pending approvals.
-- **Decision Audit Ledger**: Complete trace of every autonomous decision, displaying candidate arms, LinUCB scores, and execution tokens.
-- **Policy Sandbox & Promotion Gates**: Safely test candidate pricing policies with statistical promotion criteria ($N \ge 100$ trials, $\Delta \text{Contribution} > 0$).
+    Router_Voice --> DoctorAgent
+    Router_Gnani <--> Gnani_Inya
+    Router_Doctor --> DoctorAgent
+    Router_Voice --> Gnani_STT
 
----
+    DoctorAgent --> SQL_BI
+    DoctorAgent --> Gemini_API
+    DoctorAgent --> Gnani_TTS
+    SQL_BI --> DB
+    PolicyEngine --> DB
 
-## 📱 Master Command & Voice Trigger Cheatsheet
-
-Send any of the following queries via **Text** or **WhatsApp Voice Note** from your whitelisted phone:
-
-| Category | Input Commands / Phrasing | Autonomous Dispatch Artifacts |
-| :--- | :--- | :--- |
-| **🛍️ Amazon Report** | `amazon report`, `amazn`, `amzone`, `amz` | Platform fee breakdown, SKU unit economics, Prime Buy Box strategy + **Marketplace Comparison Chart (PNG)** + **Playable Audio Note** |
-| **🏷️ Flipkart Report** | `flipkart report`, `flpkart`, `flipkrt`, `filpkart` | 14% commission cut, logistics cost, Navy Shirt economics + **Marketplace Comparison Chart (PNG)** + **Playable Audio Note** |
-| **📦 Meesho & ONDC** | `meesho report`, `mesho`, `ondc report`, `ondc` | 0% commission vs 22% RTO risk report; ONDC 4.5% open network economics |
-| **📊 E-Commerce Report** | `ecommerce report`, `e comeses`, `channels` | Full 5-channel profit arbitrage ranking table + **Marketplace Comparison Chart** + **Audio Voice Note** |
-| **🎯 Business Strategy** | `business strategy`, `buiness statergy`, `growth`, `scale` | 4-Pillar Executive Growth Playbook (WhatsApp arbitrage, COD-to-Prepaid conversion, bundling) + **2 Charts** + **Audio Note** |
-| **📦 Order Lookup** | `order 9841`, `ord_vast_9841`, `oder 9840`, `#9839`, `order 1` | Live customer name, phone, delivery address, SKU, size, Razorpay payment status, courier tracking (*Out for Delivery*) |
-| **⚠️ Payment Failure** | `payment failure report`, `failur report`, `rto report` | Total lost revenue (₹6,497), root cause distribution (UPI timeouts 45%, 3DS drop 25%), auto-generated **1-Click Razorpay Recovery Link** + **Payment Failure Chart** + **Audio Note** |
-| **🖼️ Multi-Image Stack** | `stack 12 photo`, `multiaple image`, `graph images`, `all charts` | **Dispatches all 4 visual dashboards in one stack** (Sales, Marketplace, Failure Funnel, Inventory Buffer) + **Audio Note** |
-| **📑 Official Sales Report** | `sales report`, `seles`, `sohw repot`, `todays sales` | Complete financial ledger (₹48,081 revenue, 19 orders) + **Official PDF Sales Ledger** + **Sales Chart (PNG)** + **Audio Note** |
-| **🏷️ Catalog & Stock** | `show products`, `catalog`, `low stock`, `low margin products` | Active SKU table with prices, costs, gross margins, and policy floor warnings |
-| **✏️ Price / Inventory Edit** | `change linen shirt price to 1999`, `add 20 shirts` | Gross margin evaluation, 18% floor validation, and single-use 4-digit confirmation token |
-| **✅ Confirm / Cancel** | `yes`, `confirm <code>`, `no`, `cancel` | Atomically commits or aborts pending price/stock changes |
-| **🎙️ Voice Messages** | Record any audio voice note and send via WhatsApp | Automatic voice-to-intent reasoning, followed by text reply and **playable neural audio voice note** |
-| **📱 Master Menu** | `all inputs`, `give all inputs`, `commands`, `help`, `menu` | Formatted cheatsheet of all available commands |
-
----
-
-## ⚡ Clean-Room Quickstart & Verification (< 60 Seconds)
-
-### 1. Clone & Set Up Python Environment
-
-```powershell
-# 1. Clone the repository
-git clone https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra.git
-cd gnani-vyapar-mitra
-
-# 2. Create and activate virtual environment
-python -m venv .venv
-.venv\Scripts\activate
-
-# 3. Install dependencies in editable mode
-pip install -r requirements.txt
-pip install -e .
-
-# 4. Copy environment configuration
-cp .env.example .env
-```
-
-### 2. Verify Full Production Test Suite
-
-```powershell
-# Run the core conversational intelligence and commercial test suites
-pytest tests/unit/test_conversational_intelligence_production.py tests/unit/test_commercial_questions_suite.py -v
-```
-
-### 3. Launch Services (Local Development)
-
-```powershell
-# Terminal 1: Launch FastAPI Backend (Port 8000)
-.venv\Scripts\activate
-python -m uvicorn apps.api.main:app --host 127.0.0.1 --port 8000
-
-# Terminal 2: Launch Next.js 16 Web Dashboard (Port 3000)
-cd apps/web
-npm install
-npm run dev
-# Dashboard accessible at http://localhost:3000
+    DoctorAgent --> PolicyEngine
+    PolicyEngine --> Razorpay_API
 ```
 
 ---
 
-## 🚀 Cloud Deployment Preparation (Vercel & Render)
-
-The Vyapar Mitra architecture is decoupled for production deployment:
-- **Frontend**: Next.js 16 (`apps/web`) deployed on **Vercel**.
-- **Backend**: FastAPI (`apps/api`) deployed on **Render**.
-
-```text
-┌──────────────────────────────────────────────┐       ┌──────────────────────────────────────────────┐
-│        Frontend: Next.js 16 on VERCEL        │       │       Backend: FastAPI on RENDER (Cloud)     │
-│       Root Directory: apps/web               │ ◄───► │       Root Directory: . (Repository Root)    │
-│       Build Command: npm run build           │       │       Start: uvicorn apps.api.main:app       │
-└──────────────────────────────────────────────┘       └──────────────────────┬───────────────────────┘
-                                                                              │
-                                                                   ┌──────────┴──────────┐
-                                                                   │  Gnani AI Platform  │
-                                                                   │  Google Gemini API  │
-                                                                   │  SQLite / Render DB │
-                                                                   └─────────────────────┘
-```
-
-### 1. Frontend Deployment on Vercel
-1. In the Vercel Dashboard, import the repository `https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra`.
-2. Configure Project Settings:
-   - **Framework Preset**: Next.js
-   - **Root Directory**: `apps/web`
-   - **Build Command**: `next build` (or `npm run build`)
-   - **Output Directory**: `.next`
-3. Configure Environment Variables:
-   | Variable | Description | Example / Production Value |
-   | :--- | :--- | :--- |
-   | `NEXT_PUBLIC_API_URL` | Public HTTPS URL of the deployed Render backend | `https://vyapar-mitra-api.onrender.com` |
-   | `NEXT_PUBLIC_RAZORPAY_KEY_ID` | Razorpay public test Key ID for checkout | `rzp_test_placeholder_key_id` |
-
-### 2. Backend Deployment on Render (FastAPI)
-The repository includes an Infrastructure-as-Code Blueprint [`render.yaml`](render.yaml):
-
-1. Log in to [Render Dashboard](https://dashboard.render.com/).
-2. Create a **New Web Service** or select **New + Blueprint** pointing to `https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra`.
-3. Configure Service Settings:
-   - **Environment**: Python 3.11
-   - **Build Command**:
-     ```bash
-     pip install -r requirements.txt && pip install -e . && python scripts/seed_vastram_dataset.py
-     ```
-   - **Start Command**:
-     ```bash
-     uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT
-     ```
-4. Configure Secret Environment Variables in Render Dashboard:
-   | Variable | Description | Safe Placeholder |
-   | :--- | :--- | :--- |
-   | `APP_ENV` | Runtime environment | `production` |
-   | `DATABASE_URL` | SQLite or PostgreSQL connection string | `sqlite+aiosqlite:///./test.db` |
-   | `GEMINI_API_KEY` | Google AI Studio Gemini API key | `your_gemini_api_key_here` |
-   | `GEMINI_MODEL` | Fast conversational reasoning model | `gemini-flash-lite-latest` |
-   | `GNANI_SPEECH_API_KEY` | Gnani AI Speech API key for Prisma STT & Timbre TTS | `your_gnani_speech_key_here` |
-   | `GNANI_AGENT_ID` | Gnani Agent Builder Bot ID | `7bd15e5ff5a7411db02665f468d3353a` |
-   | `RAZORPAY_KEY_ID` | Razorpay Test Key ID | `rzp_test_your_key_id` |
-   | `RAZORPAY_KEY_SECRET` | Razorpay Secret Key | `your_razorpay_secret` |
-   | `RAZORPAY_WEBHOOK_SECRET` | Razorpay Webhook Secret | `your_webhook_secret` |
-   | `WHATSAPP_TEST_MERCHANT_PHONE` | Authorized merchant telephone | `+919113960498` |
-   | `WHATSAPP_DEFAULT_MERCHANT_ID` | Default tenant ID | `merch_atlas_travel` |
-
-### 3. Database Persistence Notes for Evaluators
-- **Local / Default Execution**: Uses local asynchronous SQLite (`sqlite+aiosqlite:///./test.db`).
-- **Render Ephemeral Disk vs Persistent Disk**: Render Free web services spin down after inactivity and have ephemeral storage. To ensure evaluator data is 100% available without manual intervention, the build command runs `python scripts/seed_vastram_dataset.py` on every deployment. This seeds the full Vastram boutique catalog (64 fashion SKUs, 340 historical orders, and ₹67,570 today's sales).
-- **Persistent Disk Option**: For production disk persistence on Render, attach a Render Disk (e.g., at `/var/data`) and configure:
-  ```ini
-  DATABASE_URL=sqlite+aiosqlite:////var/data/vyapar_mitra.db
-  ```
-
-### 4. API Key Security & Egress Integrity
-- **Zero Secrets Committed**: All real credentials remain exclusively in local uncommitted `.env` files or platform secret managers.
-- **Client/Server Boundary**: External provider calls (Gnani Prisma STT, Gnani Timbre TTS, Google Gemini API, Razorpay) occur strictly server-side in `apps/api` and `services/`. Secret API keys are never bundled into the client bundle or prefixed with `NEXT_PUBLIC_`.
-
----
-
-## 🗺️ End-to-End System Architecture
+## 6. Conversational Voice Pipeline & Execution Flow
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Merchant as 📱 Authorized Merchant (+919113960498)
-    actor ExternalAI as 🤖 External AI Buyer (MCP)
-    participant WA as 🔌 WhatsApp Connector (Node.js)
-    participant API as 📡 FastAPI Gateway (Port 8000)
-    participant NLU as 🧠 Intent Engine & Fuzzy Parser
-    participant DB as 🗄️ SQLite Database (test.db)
-    participant Media as 🎨 Quad-Media Generator
-    participant RZP as 💳 Razorpay Gateway (Test Mode)
-    participant Bandit as 📈 LinUCB Reinforcement Learner
+    actor Merchant as Merchant (User)
+    participant Web as Next.js Web Client (/voice-agent)
+    participant API as FastAPI Voice Router (/api/v1/voice)
+    participant STT as Gnani Prisma STT (v3.0)
+    participant Advisor as DoctorAdvisorAgent
+    participant DB as SQLite Relational DB
+    participant LLM as Google Gemini API
+    participant TTS as Gnani Timbre TTS (v3.0)
 
-    %% Scenario A: WhatsApp Interaction
-    Note over Merchant,Media: A. Conversational WhatsApp Commerce & Diagnostics
-    Merchant->>WA: Text / Voice Note: "flipkart report" or "order 9841"
-    WA->>WA: Strict Whitelist Verification (+919113960498)
-    WA->>API: POST /api/v1/whatsapp/connector-inbound
-    API->>NLU: Parse Intent (Fuzzy typo normalization + Regex)
-    NLU->>DB: Query Catalog, Orders & Channel Margins
-    DB-->>API: Return Order / Channel Economics
-    API->>Media: Generate Media (PDF / Dark Navy Charts / Edge-TTS MP3)
-    Media-->>API: Return file paths
-    API-->>WA: Synchronous JSON {reply, image_paths, pdf_path, voice_path}
-    WA->>Merchant: Text Reply + Charts (PNG) + PDF + Playable Voice Audio (MP3)
-
-    %% Scenario B: External AI Buyer MCP Transaction
-    Note over ExternalAI,Bandit: B. Autonomous External AI Buyer Transaction & Learning
-    ExternalAI->>API: POST /api/v1/mcp/jsonrpc (request_checkout)
-    API->>DB: Atomic Row Lock (SELECT ... FOR UPDATE)
-    API->>API: Validate Gross Margin >= 18% & Issue Single-Use HMAC Token
-    API->>RZP: POST https://api.razorpay.com/v1/orders (Integer Paise)
-    RZP-->>API: Return Official Order (ord_...)
-    ExternalAI->>RZP: Buyer Pays via Test Card / UPI
-    RZP->>API: POST /webhook/razorpay (payment.captured)
-    API->>API: Cryptographic HMAC-SHA256 Signature Verification
-    API->>Bandit: Update LinUCB Model: r = Revenue - COGS
-    Note over Bandit: Covariance: A <- A + x x^T | Bias: b <- b + r x
+    Merchant->>Web: Speaks: "Ivattu sales eshtu aagide?" (Kannada)
+    Web->>Web: Audio Recorded (WAV/WebM) via MediaRecorder
+    Web->>API: POST /api/v1/voice/query (Multipart Audio Form)
+    API->>STT: Stream Audio Bytes to Gnani Prisma API
+    STT-->>API: Transcribed Text: "ಇವತ್ತು ಸೇಲ್ಸ್ ಎಷ್ಟು ಆಗಿದೆ?" (lang: kn)
+    API->>Advisor: answer_merchant_query(query, lang="kn")
+    Advisor->>DB: Execute Deterministic KPI Query (Today's Paid Orders)
+    DB-->>Advisor: Results: ₹67,570 revenue, 30 orders, 64.2% margin
+    Advisor->>LLM: Generate Conversational Response (Prompt + DB Facts + Language Rules)
+    LLM-->>Advisor: Natural Spoken Text + Proactive Follow-up
+    Advisor->>TTS: POST /api/v1/tts/inference (Spoken Text, Voice: Lakshmi)
+    TTS-->>Advisor: Synthesized Base64 MP3 Audio
+    Advisor-->>API: Return Structured JSON {spoken_text, audio_base64, kpi_summary}
+    API-->>Web: JSON Response with Base64 Spoken Audio
+    Web->>Web: Play Audio via HTML5 AudioContext & Render Transcript
+    Web-->>Merchant: Merchant Hears Spoken Voice Briefing in Kannada
 ```
 
 ---
 
-## 🔌 Model Context Protocol (MCP 2026) Interface
+## 7. Database & Demonstration Dataset (Vastram Boutique)
 
-Connect **Claude Desktop** or autonomous shopping bots directly to Vastram Commerce:
+Vyapar Mitra includes a reproducible retail dataset seeded via `scripts/seed_vastram_dataset.py`.
 
-### Claude Desktop Configuration (`claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "vastram-commerce": {
-      "command": "python",
-      "args": ["-m", "services.mcp.server"],
-      "cwd": "C:\\path\\to\\merchant-policy-agent",
-      "env": {
-        "MERCHANT_ID": "merch_atlas_travel",
-        "PYTHONPATH": "."
-      }
-    }
-  }
-}
-```
-
-### The 6 MCP Tools:
-1. `search_catalog`: Discover active products with buyer-safe attributes.
-2. `get_product`: Retrieve detailed product specs (wholesale COGS strictly stripped).
-3. `evaluate_buyer_intent`: Parse natural language buyer queries into hard constraints.
-4. `get_offer`: Score candidates using LinUCB multi-armed bandit with 18% margin protection.
-5. `request_checkout`: Lock stock atomically and emit signed Razorpay order.
-6. `get_order_status`: Return verified payment capture and tracking status.
+- **Demonstration Merchant:** Vastram Ethnic Apparel (`merch_atlas_travel`).
+- **Product Catalog:** 64 apparel SKUs spanning Linen Shirts, Silk Sarees, Nehru Jackets, Chinos, and Kurtas.
+- **Historical Orders:** 340+ historical transactions spanning a 30-day window.
+- **Milestone Day Figures:**
+  - Daily Revenue: ₹67,570.00 across 30 verified paid orders.
+  - Active Gross Margin: ~64.5%.
+  - Critical Stock Alerts: Identifies low-stock items (e.g., *Black Formal Trousers* with $\le 5$ units).
+  - Trapped Working Capital: Identifies dead stock items (e.g., *Charcoal Grey Trousers* dormant for $>60$ days).
 
 ---
 
-## 📁 Repository Sitemap
+## 8. Repository Structure
 
 ```text
+gnani-vyapar-mitra/
 ├── apps/
-│   ├── api/                     # FastAPI 0.111.0 Gateway & Routers
-│   │   ├── core/                # Config, database session, security middleware
-│   │   ├── routers/             # WhatsApp, Orders, Products, MCP, Diagnostics
-│   │   └── main.py              # Application lifecycle & lifespan handlers
-│   └── web/                     # Next.js 16 Dark-Mode Operations Cockpit
-│       ├── app/                 # App router (Overview, Decisions, Policies, Learning)
-│       └── components/          # KPI cards, visual charts, slide-over drawers
-├── connector/                   # Local WhatsApp Web Connector Daemon
-│   ├── node_modules/            # whatsapp-web.js with WWebJS getter patch
-│   ├── index.js                 # Whitelist isolation, multi-image & audio dispatch
-│   └── package.json             # Node.js dependencies (axios, qrcode-terminal)
-├── domain/                      # Domain Entity Models & Schemas
-│   ├── models.py                # Order, Payment, Product, Merchant, AuditEvent
-│   ├── growth_models.py         # ChannelConfig, SKUChannelDecision
-│   └── whatsapp_models.py       # WhatsAppWebhookLog, PendingConfirmation
-├── services/                    # Autonomous Domain Services
-│   ├── growth_doctor/           # Dead stock, margin leak, pricing diagnostics
-│   ├── marketplace/             # Amazon, Flipkart, Meesho, ONDC economics engine
-│   ├── policy/                  # Dual-engine Gemini Flash + heuristic strategy generator
-│   ├── safety/                  # Deterministic 18% margin floor & discount gates
-│   ├── razorpay/                # Razorpay SDK client, order creator, reconciliation
-│   └── whatsapp/                # Multilingual NLU parser, media generator, policy guard
-├── artifacts/                   # Generated reports (PDFs, Charts, MP3 Audio Notes)
-├── tests/                       # 962 Passing Automated Tests
-│   ├── unit/                    # 578 Hermetic unit tests (in-memory SQLite)
-│   └── integration/             # 384 End-to-end integration tests
-├── .env.example                 # Fully documented environment template
-├── ARCHITECTURE.md              # Deep-dive 4-plane architectural specification
-└── README.md                    # This master documentation file
+│   ├── api/                          # FastAPI Backend Application
+│   │   ├── core/                     # Configuration, Database, Security Middleware
+│   │   │   ├── config.py             # Pydantic Settings & Environment Parsing
+│   │   │   ├── database.py           # Async SQLAlchemy Engine & Session Factory
+│   │   │   └── middleware.py         # Request ID, Logging, and CORS Configuration
+│   │   ├── routers/                  # Modular REST API Route Handlers
+│   │   │   ├── voice.py              # Voice Processing, STT & TTS Endpoints
+│   │   │   ├── gnani_agent.py        # Gnani Agent Builder & Platform Endpoints
+│   │   │   ├── growth_doctor.py      # Business Intelligence & Diagnostics Routes
+│   │   │   ├── orders.py             # Order Ledger & Transaction Queries
+│   │   │   ├── merchants.py          # Multi-Tenant Merchant Profiles
+│   │   │   ├── mcp.py                # Model Context Protocol (MCP 2026) Endpoints
+│   │   │   ├── whatsapp.py           # WhatsApp Inbound Gateway & Webhook Handlers
+│   │   │   └── health.py             # Health Checks & Service Readiness Probes
+│   │   └── main.py                   # FastAPI Application Entrypoint & Lifecycle
+│   └── web/                          # Next.js 16 Web Dashboard Application
+│       ├── src/
+│       │   ├── app/                  # Next.js App Router Pages
+│       │   │   ├── page.tsx          # Executive KPI Cockpit Overview
+│       │   │   ├── voice-agent/      # Conversational Voice Agent Interface
+│       │   │   ├── doctor/           # Growth Doctor Diagnostics & Analytics
+│       │   │   ├── orders/           # Order Ledger & Payment Tracking
+│       │   │   ├── products/         # Catalog & Inventory Margin Management
+│       │   │   ├── channels/         # Multi-Channel Profit Arbitrage Matrix
+│       │   │   ├── policies/         # Commercial Policy Rules & Floor Gates
+│       │   │   ├── decisions/        # Autonomous Decision Audit Ledger
+│       │   │   └── learning/         # LinUCB Reinforcement Learning Inspection
+│       │   ├── components/           # Reusable UI Widgets & Navigation Shell
+│       │   └── lib/                  # API Client, TypeScript Interfaces & Context
+│       ├── package.json              # Frontend Node Dependencies
+│       └── next.config.ts            # Next.js Configuration
+├── domain/                           # Relational Models & Schemas
+│   ├── models.py                     # Merchant, Product, Order, Payment & Audit Entities
+│   └── growth_models.py              # ChannelConfig & Arbitrage Data Models
+├── services/                         # Business Logic & External Service Connectors
+│   ├── agent/                        # Conversational DoctorAdvisorAgent Orchestrator
+│   ├── voice/                        # Gnani Prisma STT & Timbre TTS Implementations
+│   ├── llm/                          # Google Gemini & OpenRouter Fallback Clients
+│   ├── commerce/                     # Inventory Valuation & Financial Math
+│   ├── growth_doctor/                # Dead Stock, Stockout & Margin Diagnostic Services
+│   ├── marketplace/                  # Amazon, Flipkart, Meesho, ONDC Economics Engine
+│   ├── mcp/                          # FastMCP Server Implementation
+│   └── razorpay/                     # Razorpay SDK Client, Order Creation & Webhooks
+├── scripts/                          # Seeding & Verification Utilities
+│   └── seed_vastram_dataset.py       # Deterministic Vastram Catalog Seeder
+├── tests/                            # Automated Pytest Suite
+│   ├── unit/                         # Unit Tests (Hermetic In-Memory SQLite)
+│   │   ├── test_conversational_intelligence_production.py
+│   │   └── test_commercial_questions_suite.py
+│   └── conftest.py                   # Pytest Fixtures & Database Setup
+├── render.yaml                       # Render Infrastructure-as-Code Blueprint
+├── requirements.txt                  # Python Production Dependencies
+├── pyproject.toml                    # Python Project Metadata & Build Settings
+├── .env.example                      # Documented Environment Variable Template
+└── README.md                         # Master Documentation File
 ```
 
 ---
 
-## ⚙️ Environment Configuration (`.env`)
+## 9. Local Installation & Setup Guide
 
-```ini
-# Database & Core Application
-DATABASE_URL=sqlite+aiosqlite:///./test.db
-ENVIRONMENT=production
-DEBUG=false
+### Prerequisites
+- **Python:** 3.11.0 or higher
+- **Node.js:** 18.18.0 or higher (Node 20+ recommended)
+- **Git**
 
-# Google Gemini LLM Client
-GEMINI_API_KEY=your_gemini_api_key_here
-LLM_MODEL=gemini-1.5-flash
-
-# Razorpay Test Mode Credentials
-RAZORPAY_KEY_ID=rzp_test_your_key_id
-RAZORPAY_KEY_SECRET=your_key_secret_here
-RAZORPAY_WEBHOOK_SECRET=your_webhook_secret_here
-
-# WhatsApp Business / Web Connector
-WHATSAPP_TEST_MERCHANT_PHONE=+919113960498
-WHATSAPP_DEFAULT_MERCHANT_ID=merch_atlas_travel
-BACKEND_URL=http://localhost:8000/api/v1/whatsapp/connector-inbound
-
-# Security & Execution Tokens
-POLICY_HMAC_SECRET=super_secret_hmac_signing_key_32_bytes_min
-TOKEN_EXPIRATION_SECONDS=900
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra.git
+cd gnani-vyapar-mitra
 ```
+
+### Step 2: Configure Environment Variables
+Create a local `.env` file based on `.env.example`:
+```bash
+cp .env.example .env
+```
+*(Populate your API keys as described in Section 10 below).*
+
+### Step 3: Set Up Backend (FastAPI)
+```bash
+# Create and activate virtual environment
+python -m venv .venv
+
+# On Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+# On Linux/macOS:
+# source .venv/bin/activate
+
+# Install dependencies in editable mode
+pip install -r requirements.txt
+pip install -e .
+
+# Seed the Vastram boutique dataset
+python scripts/seed_vastram_dataset.py
+
+# Launch FastAPI server on port 8000
+python -m uvicorn apps.api.main:app --host 127.0.0.1 --port 8000 --reload
+```
+The backend will be available at `http://127.0.0.1:8000`. You can test health at `http://127.0.0.1:8000/health`.
+
+### Step 4: Set Up Frontend (Next.js)
+In a new terminal window:
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+The Next.js dashboard will be available at `http://localhost:3000`.
+
+---
+
+## 10. Environment Variable Reference
+
+The application uses environment variables for external service integration. Store these in your local `.env` file or in your cloud deployment platform's secret manager:
+
+| Environment Variable | Description | Safe Placeholder |
+|---|---|---|
+| `APP_ENV` | Application environment (`development` or `production`) | `production` |
+| `DATABASE_URL` | SQLAlchemy async database connection string | `sqlite+aiosqlite:///./test.db` |
+| `GNANI_SPEECH_API_KEY` | Gnani AI Speech Platform API Key (Prisma STT & Timbre TTS) | `your_gnani_speech_key` |
+| `GNANI_API_KEY` | Gnani AI Platform API Key | `your_gnani_platform_key` |
+| `GNANI_AGENT_ID` | Gnani Inya Agent Bot Identifier | `7bd15e5ff5a7411db02665f468d3353a` |
+| `GNANI_BASE_URL` | Gnani Speech API Base URL | `https://api.vachana.ai` |
+| `GNANI_PLATFORM_BASE_URL` | Gnani Inya Platform Base URL | `https://api.inya.ai/platform` |
+| `GEMINI_API_KEY` | Google AI Studio Gemini API Key | `your_gemini_api_key` |
+| `GEMINI_MODEL` | Gemini model variant | `gemini-3.1-flash-lite-preview` |
+| `OPENROUTER_API_KEY` | Optional fallback LLM provider key | `your_openrouter_key` |
+| `RAZORPAY_KEY_ID` | Razorpay Test Key ID | `rzp_test_your_key_id` |
+| `RAZORPAY_KEY_SECRET` | Razorpay Secret Key | `your_razorpay_secret` |
+| `WHATSAPP_TEST_MERCHANT_PHONE` | Authorized merchant telephone for whitelisted gateway | `+919113960498` |
+| `WHATSAPP_DEFAULT_MERCHANT_ID` | Default tenant identifier | `merch_atlas_travel` |
+| `NEXT_PUBLIC_API_URL` | Public API URL accessed by frontend (in `apps/web/.env.local`) | `http://localhost:8000` |
+
+---
+
+## 11. Cloud Deployment Guide
+
+The application is deployed across **Vercel** (Frontend) and **Render** (Backend).
+
+### 1. Frontend Deployment on Vercel
+- **Repository:** `https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra`
+- **Root Directory:** Set strictly to `apps/web` (since the repository is a monorepo).
+- **Framework Preset:** Next.js (automatically detected).
+- **Build Command:** `next build` (or `npm run build`).
+- **Environment Variables:**
+  - `NEXT_PUBLIC_API_URL`: Set to your live Render backend URL (e.g., `https://vyapar-mitra-api.onrender.com` without a trailing slash).
+
+### 2. Backend Deployment on Render
+- **Service Type:** Web Service
+- **Runtime:** Python 3.11.9
+- **Build Command:**
+  ```bash
+  pip install -r requirements.txt && pip install -e . && python scripts/seed_vastram_dataset.py
+  ```
+- **Start Command:**
+  ```bash
+  uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT
+  ```
+- **Environment Variables:**
+  Add the backend environment variables specified in Section 10 (`GNANI_SPEECH_API_KEY`, `GNANI_API_KEY`, `GNANI_AGENT_ID`, `GEMINI_API_KEY`, `DATABASE_URL`, `PYTHON_VERSION=3.11.9`, etc.).
+
+---
+
+## 12. Automated Testing & Verification
+
+The repository maintains an automated unit and commercial verification test suite:
+
+```bash
+# Run conversational intelligence and commercial questions test suite
+pytest tests/unit/test_conversational_intelligence_production.py tests/unit/test_commercial_questions_suite.py -v
+```
+
+### Verified Test Cases
+- **Conversational Intelligence:** Validates ambiguity handling, multi-turn pronoun retention, code-switching in Kannada and Hindi, mathematical error correction, and strict merchant tenant isolation.
+- **12 Commercial Questions:** Independently calculates SQL ground truth and compares against the Doctor Advisor agent's spoken responses for revenue, profit margins, stock reordering, slow-moving items, and inventory valuation.
+
+---
+
+## 13. Future Roadmap
+
+- **Autonomous Supplier WhatsApp PO Generation:** Automatically draft and dispatch purchase orders to fabric suppliers when stock hits critical reorder levels.
+- **Voice Fingerprinting & Multi-Clerk Security:** Authenticate the store owner versus sales staff by voice biometric signature before approving pricing overrides.
+- **Direct Beckn / ONDC Network Adapter:** Live catalog publishing and order intake via ONDC open retail protocols.
+- **Low-Power On-Device Edge VAD:** Running lightweight WebAssembly voice activity detection locally in browser storage to reduce network traffic.
+
+---
+
+## 14. Project Links & Acknowledgements
+
+- **Live Application:** [https://gnani-vyapar-mitra-apps.vercel.app/](https://gnani-vyapar-mitra-apps.vercel.app/)
+- **GitHub Repository:** [https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra](https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra)
+- **Speech Intelligence:** Built using [Gnani.ai](https://gnani.ai) Prisma Speech-to-Text (v3.0), Timbre Text-to-Speech (v3.0), and Inya Agent Platform.
+- **Reasoning Infrastructure:** Powered by [Google Gemini](https://ai.google.dev/).
+- **Commerce Infrastructure:** Integrated with [Razorpay](https://razorpay.com).
+
+*Vyapar Mitra — Har Dukaan Ka Apna Mitra. Empowering India's Retailers with Voice and Commerce AI.*
