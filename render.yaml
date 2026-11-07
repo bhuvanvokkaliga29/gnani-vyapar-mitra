@@ -24,6 +24,12 @@ services:
         sync: false
       - key: GNANI_SPEECH_API_KEY
         sync: false
+      - key: GNANI_API_KEY
+        sync: false
+      - key: GNANI_AGENT_ID
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
       - key: WHATSAPP_TEST_MERCHANT_PHONE
         value: "+919113960498"
       - key: WHATSAPP_DEFAULT_MERCHANT_ID
