@@ -150,10 +150,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       {/* ============================================================== */}
       {/* INSTAGRAM-STYLE BOTTOM NAVIGATION (5 ITEMS)                    */}
-      {/* 1: Overview | 2: Products | 3: Doctor | 4: Voice Agent | 5: More */}
+      {/* 1: Overview | 2: Products | 3: Doctor | 4: Gnani Voice Agent | 5: More */}
       {/* ============================================================== */}
-      <nav className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#D5DEE9] px-2 py-1.5 shadow-[0_-4px_16px_rgba(15,23,42,0.04)]">
-        <div className="max-w-md mx-auto grid grid-cols-5 items-center">
+      <nav className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#D5DEE9] px-2 py-1.5 shadow-[0_-4px_20px_rgba(15,23,42,0.06)] overflow-visible">
+        <div className="max-w-xl mx-auto grid grid-cols-5 items-end pb-0.5">
           
           {/* Tab 1: Overview */}
           <Link
@@ -165,7 +165,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
             }`}
           >
-            <div className={`p-1 rounded-full ${pathname === '/' ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
+            <div className={`p-1.5 rounded-full ${pathname === '/' ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <LayoutDashboard className="w-4 h-4" />
             </div>
             <span className="text-[10px] tracking-tight mt-0.5">Overview</span>
@@ -181,7 +181,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
             }`}
           >
-            <div className={`p-1 rounded-full ${pathname.startsWith('/products') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
+            <div className={`p-1.5 rounded-full ${pathname.startsWith('/products') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <Package className="w-4 h-4" />
             </div>
             <span className="text-[10px] tracking-tight mt-0.5">Products</span>
@@ -197,26 +197,46 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
             }`}
           >
-            <div className={`p-1 rounded-full ${pathname.startsWith('/doctor') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
+            <div className={`p-1.5 rounded-full ${pathname.startsWith('/doctor') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <Stethoscope className="w-4 h-4" />
             </div>
             <span className="text-[10px] tracking-tight mt-0.5">Doctor</span>
           </Link>
 
-          {/* Tab 4: Voice Agent */}
+          {/* Tab 4: Gnani AI Voice Agent (Hero Prominence & Glowing Highlight) */}
           <Link
             href="/voice-agent"
             onClick={() => setIsMoreOpen(false)}
-            className={`flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-all ${
-              pathname.startsWith('/voice-agent')
-                ? 'text-[#0F172A] font-bold scale-105'
-                : 'text-[#526176] hover:text-[#0F172A] font-medium'
-            }`}
+            aria-label="Gnani AI Voice Agent"
+            className="relative flex flex-col items-center justify-end -mt-5 sm:-mt-6 pb-0.5 px-0.5 group transition-all transform hover:scale-105 cursor-pointer z-10"
           >
-            <div className={`p-1 rounded-full ${pathname.startsWith('/voice-agent') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
-              <Mic className="w-4 h-4" />
+            {/* Subtle Pulsing Ambient Glowing Aura */}
+            <span className="absolute top-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#FF6F00] via-amber-400 to-[#FF6F00] opacity-75 blur-xs animate-pulse pointer-events-none" />
+
+            {/* Circular Highlight / Glowing Ring Container around Microphone Icon */}
+            <div
+              className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg transition-all ${
+                pathname.startsWith('/voice-agent')
+                  ? 'bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white ring-4 ring-[#FF6F00] shadow-[#FF6F00]/40'
+                  : 'bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white ring-4 ring-[#FF6F00]/70 hover:ring-[#FF6F00] shadow-black/25 hover:shadow-[#FF6F00]/30'
+              } ring-offset-2 ring-offset-white`}
+            >
+              <Mic className="w-6 h-6 sm:w-7 sm:h-7 text-white transition-transform group-hover:scale-110" />
+
+              {/* Active Audio Indicator Dot */}
+              <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#00C853] border-2 border-white animate-ping" />
+              <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#00C853] border-2 border-white" />
             </div>
-            <span className="text-[10px] tracking-tight mt-0.5">Voice Agent</span>
+
+            {/* Bold High-Contrast Label */}
+            <span className="text-[9px] sm:text-[10.5px] font-black tracking-tight text-[#0F172A] text-center uppercase mt-1 leading-tight drop-shadow-xs whitespace-nowrap">
+              GNANI VOICE AGENT
+            </span>
+
+            {/* Small Badge: POWERED BY GNANI AI */}
+            <span className="inline-flex items-center px-1.5 py-0.5 text-[6.5px] sm:text-[7.5px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-[#FF6F00] to-amber-500 text-white rounded-full shadow-xs mt-0.5 leading-none whitespace-nowrap">
+              POWERED BY GNANI AI
+            </span>
           </Link>
 
           {/* Tab 5: More / Others (Opens Remaining Features Drawer) */}
@@ -228,7 +248,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
             }`}
           >
-            <div className={`p-1 rounded-full ${isMoreOpen || isMoreActive ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
+            <div className={`p-1.5 rounded-full ${isMoreOpen || isMoreActive ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <Grid className="w-4 h-4" />
             </div>
             <span className="text-[10px] tracking-tight mt-0.5">Others</span>
