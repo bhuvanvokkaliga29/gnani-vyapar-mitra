@@ -68,7 +68,7 @@ interface MessageTurn {
 }
 
 // Clean formatted message renderer for transcripts (No raw markdown syntax)
-function FormattedTranscriptContent({ content }: { content: string }) {
+function FormattedTranscriptContent({ content, isUser = false }: { content: string; isUser?: boolean }) {
   if (!content) return null;
 
   const lines = content.split('\n');
@@ -82,12 +82,12 @@ function FormattedTranscriptContent({ content }: { content: string }) {
     const dataRows = tableRows.slice(1);
 
     elements.push(
-      <div key={`table-${keyPrefix}`} className="my-2.5 overflow-x-auto rounded-lg border border-neutral-800 bg-neutral-950/80">
+      <div key={`table-${keyPrefix}`} className={`my-2.5 overflow-x-auto rounded-lg border ${isUser ? 'border-neutral-300 bg-neutral-100' : 'border-neutral-800 bg-neutral-950/80'}`}>
         <table className="w-full text-left text-[11px] font-mono border-collapse">
           <thead>
-            <tr className="bg-neutral-900 border-b border-neutral-800 text-neutral-300">
+            <tr className={`${isUser ? 'bg-neutral-200 border-b border-neutral-300 text-neutral-900' : 'bg-neutral-900 border-b border-neutral-800 text-neutral-300'}`}>
               {headerRow.map((cell, cIdx) => (
-                <th key={cIdx} className="py-2 px-3 font-semibold text-neutral-200">
+                <th key={cIdx} className={`py-2 px-3 font-semibold ${isUser ? 'text-black' : 'text-neutral-200'}`}>
                   {cell.trim()}
                 </th>
               ))}
@@ -95,12 +95,12 @@ function FormattedTranscriptContent({ content }: { content: string }) {
           </thead>
           <tbody>
             {dataRows.map((row, rIdx) => (
-              <tr key={rIdx} className="border-b border-neutral-900/70 hover:bg-neutral-900/50">
+              <tr key={rIdx} className={`border-b ${isUser ? 'border-neutral-200 hover:bg-neutral-200/50' : 'border-neutral-900/70 hover:bg-neutral-900/50'}`}>
                 {row.map((cell, cIdx) => {
                   const val = cell.trim();
                   const isNum = /^₹?[0-9,]+(?:\.[0-9]+)?%?$/.test(val);
                   return (
-                    <td key={cIdx} className={`py-2 px-3 text-neutral-300 ${isNum ? 'text-right font-medium text-white' : ''}`}>
+                    <td key={cIdx} className={`py-2 px-3 ${isUser ? (isNum ? 'text-right font-semibold text-black' : 'text-neutral-900') : (isNum ? 'text-right font-medium text-white' : 'text-neutral-300')}`}>
                       {val}
                     </td>
                   );
@@ -119,7 +119,7 @@ function FormattedTranscriptContent({ content }: { content: string }) {
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, pIdx) => {
       if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={pIdx} className="font-semibold text-white">{part.slice(2, -2)}</strong>;
+        return <strong key={pIdx} className={`font-semibold ${isUser ? 'text-black' : 'text-white'}`}>{part.slice(2, -2)}</strong>;
       }
       return part;
     });
@@ -148,8 +148,8 @@ function FormattedTranscriptContent({ content }: { content: string }) {
     if (trimmed.startsWith('#')) {
       const headingText = trimmed.replace(/^#+\s*/, '');
       elements.push(
-        <h4 key={`h-${i}`} className="text-xs font-bold text-white uppercase tracking-wider mt-3 mb-1.5 flex items-center gap-1.5">
-          <span className="w-1.5 h-3 bg-white rounded-full inline-block" />
+        <h4 key={`h-${i}`} className={`text-xs font-bold uppercase tracking-wider mt-3 mb-1.5 flex items-center gap-1.5 ${isUser ? 'text-black' : 'text-white'}`}>
+          <span className={`w-1.5 h-3 rounded-full inline-block ${isUser ? 'bg-black' : 'bg-white'}`} />
           {renderInline(headingText)}
         </h4>
       );
@@ -159,8 +159,8 @@ function FormattedTranscriptContent({ content }: { content: string }) {
     if (/^[-*]\s+/.test(trimmed)) {
       const bulletText = trimmed.replace(/^[-*]\s+/, '');
       elements.push(
-        <div key={`bullet-${i}`} className="flex items-start gap-2 my-1 pl-1 text-[11px] text-neutral-300 leading-relaxed">
-          <span className="text-neutral-500 mt-1 text-[8px]">•</span>
+        <div key={`bullet-${i}`} className={`flex items-start gap-2 my-1 pl-1 text-[11px] leading-relaxed ${isUser ? 'text-neutral-900' : 'text-neutral-300'}`}>
+          <span className={`mt-1 text-[8px] ${isUser ? 'text-neutral-600' : 'text-neutral-500'}`}>•</span>
           <span>{renderInline(bulletText)}</span>
         </div>
       );
@@ -171,8 +171,8 @@ function FormattedTranscriptContent({ content }: { content: string }) {
       const numMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
       if (numMatch) {
         elements.push(
-          <div key={`num-${i}`} className="flex items-start gap-2 my-1 pl-1 text-[11px] text-neutral-300 leading-relaxed">
-            <span className="font-mono text-neutral-400 text-[10px] w-4 shrink-0">{numMatch[1]}.</span>
+          <div key={`num-${i}`} className={`flex items-start gap-2 my-1 pl-1 text-[11px] leading-relaxed ${isUser ? 'text-neutral-900' : 'text-neutral-300'}`}>
+            <span className={`font-mono text-[10px] w-4 shrink-0 ${isUser ? 'text-neutral-700' : 'text-neutral-400'}`}>{numMatch[1]}.</span>
             <span>{renderInline(numMatch[2])}</span>
           </div>
         );
@@ -181,7 +181,7 @@ function FormattedTranscriptContent({ content }: { content: string }) {
     }
 
     elements.push(
-      <p key={`p-${i}`} className="text-[11px] leading-relaxed text-neutral-300 my-1">
+      <p key={`p-${i}`} className={`text-[11px] leading-relaxed my-1 ${isUser ? 'text-neutral-950 font-medium' : 'text-neutral-300'}`}>
         {renderInline(trimmed)}
       </p>
     );
@@ -1286,8 +1286,14 @@ export default function VoiceAgentPage() {
                       </div>
                     )}
 
-                    {/* Rich Detailed Advice Content (Cleanly formatted, zero raw markdown syntax) */}
-                    <FormattedTranscriptContent content={m.content} />
+                    {/* Rich Detailed Advice Content for Assistant, High-Contrast Text for Merchant */}
+                    {m.role === 'user' ? (
+                      <p className="text-xs sm:text-sm text-neutral-950 font-semibold leading-relaxed whitespace-pre-wrap">
+                        {m.content}
+                      </p>
+                    ) : (
+                      <FormattedTranscriptContent content={m.content} isUser={false} />
+                    )}
 
                     {/* Verified Ground Truth Tools Badge */}
                     {m.tools_used && m.tools_used.length > 0 && (
