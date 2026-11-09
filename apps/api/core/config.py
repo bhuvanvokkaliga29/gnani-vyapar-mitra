@@ -78,9 +78,9 @@ class Settings(BaseSettings):
 
     # Google Gemini AI Configuration
     GEMINI_API_KEY: str = Field(default="", description="Google Gemini API Key")
-    GEMINI_MODEL: str = Field(default="gemini-3.1-flash-lite-preview", description="Gemini Model Identifier (e.g. gemini-3.1-flash-lite-preview, gemini-flash-lite-latest)")
+    GEMINI_MODEL: str = Field(default="gemini-flash-lite-latest", description="Gemini Model Identifier (e.g. gemini-flash-lite-latest, gemini-2.5-flash)")
     LLM_API_KEY: str = Field(default="", description="Legacy alias for GEMINI_API_KEY")
-    LLM_MODEL: str = Field(default="gemini-3.1-flash-lite-preview", description="Legacy alias for GEMINI_MODEL")
+    LLM_MODEL: str = Field(default="gemini-flash-lite-latest", description="Legacy alias for GEMINI_MODEL")
 
     # Gnani Evon AI Configuration (Indic Foundation MoE)
     EVON_API_KEY: str = Field(default="", description="Gnani Evon API Key (or falls back to GNANI_API_KEY)")

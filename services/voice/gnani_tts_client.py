@@ -59,7 +59,7 @@ class GnaniTTSClient:
         return bool(self.api_key and self.api_key.strip() and not self.api_key.startswith("mock_"))
 
     @staticmethod
-    def _pcm_to_wav(pcm_bytes: bytes, sample_rate: int = 48000, channels: int = 1, sampwidth: int = 2) -> bytes:
+    def _pcm_to_wav(pcm_bytes: bytes, sample_rate: int = 24000, channels: int = 1, sampwidth: int = 2) -> bytes:
         """Wrap raw linear PCM audio into a standard WAV container (RIFF/WAVE header)."""
         wav_io = io.BytesIO()
         with wave.open(wav_io, "wb") as wav_file:
@@ -145,7 +145,7 @@ class GnaniTTSClient:
             "audio_config": {
                 "encoding": "linear_pcm",
                 "container": "wav",
-                "sample_rate": 48000
+                "sample_rate": 24000
             }
         }
 
@@ -175,7 +175,7 @@ class GnaniTTSClient:
                         total_latency = round(time.perf_counter() - t0, 3)
                         full_audio = b"".join(raw_chunks)
                         if not full_audio.startswith(b"RIFF"):
-                            audio_bytes = self._pcm_to_wav(full_audio, sample_rate=48000, channels=1)
+                            audio_bytes = self._pcm_to_wav(full_audio, sample_rate=24000, channels=1)
                         else:
                             b = bytearray(full_audio)
                             n = len(b)
@@ -225,7 +225,7 @@ class GnaniTTSClient:
             if res.status_code == 200:
                 audio_bytes = res.content
                 if not audio_bytes.startswith(b"RIFF"):
-                    audio_bytes = self._pcm_to_wav(audio_bytes, sample_rate=48000, channels=1)
+                    audio_bytes = self._pcm_to_wav(audio_bytes, sample_rate=24000, channels=1)
                 else:
                     b = bytearray(audio_bytes)
                     n = len(b)

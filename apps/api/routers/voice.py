@@ -200,7 +200,7 @@ async def query_doctor(
         )
         if tts_result.get("success"):
             raw_bytes = tts_result.get("audio_bytes", b"")
-            sample_rate = 48000
+            sample_rate = 24000
             duration_sec = round((len(raw_bytes) - 44) / (sample_rate * 2), 2) if len(raw_bytes) > 44 else 0.0
             audio_payload = {
                 "audio_base64": tts_result.get("audio_base64"),

@@ -129,7 +129,14 @@ class GeminiProvider(LLMProvider):
             )
 
         client = self._external_client or get_shared_gemini_client()
-        candidate_models = [self.model] + [m for m in GEMINI_FALLBACK_MODELS if m != self.model]
+        # Ultra-low latency priority: Prioritize production flash-lite for sub-second responses
+        preferred_order = ["gemini-flash-lite-latest", "gemini-2.5-flash", self.model] + GEMINI_FALLBACK_MODELS
+        seen = set()
+        candidate_models = []
+        for m in preferred_order:
+            if m and m not in seen:
+                seen.add(m)
+                candidate_models.append(m)
 
         last_error = None
         for cand_model in candidate_models:

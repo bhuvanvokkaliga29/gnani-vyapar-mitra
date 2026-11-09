@@ -135,12 +135,12 @@ def prepare_spoken_response(text: Optional[str], language: Optional[str] = "en",
     # Strip all emotion or XML/SSML tags completely to ensure consistent, calm, natural voice volume
     clean = re.sub(r'<[^>]+>', '', clean)
 
-    # For natural conversational delivery, clamp spoken text cleanly at sentence boundaries (up to 80 words)
+    # For natural, low-latency conversational delivery, clamp spoken text cleanly at sentence boundaries (target 1-2 sentences, up to 24 words)
     words = clean.split()
-    if len(words) > 80:
-        sub = " ".join(words[:80])
+    if len(words) > 24:
+        sub = " ".join(words[:24])
         m = re.search(r'^(.*[.!?।])', sub)
-        if m and len(m.group(1).split()) >= 15:
+        if m and len(m.group(1).split()) >= 8:
             clean = m.group(1)
         else:
             clean = sub
@@ -397,19 +397,19 @@ class DoctorAdvisorAgent:
         # Dynamic Emotion & Speech Cadence Mapping
         if intent == "EMOTION_SAD":
             emotion = "SAD"
-            speech_speed = 0.90
+            speech_speed = 0.95
         elif intent == "EMOTION_EXCITED":
             emotion = "EXCITED"
-            speech_speed = 1.08
+            speech_speed = 1.15
         elif intent == "EMOTION_FRUSTRATED":
             emotion = "FRUSTRATED"
-            speech_speed = 0.94
+            speech_speed = 1.00
         elif intent == "EMOTION_CONFUSED":
             emotion = "CONFUSED"
-            speech_speed = 0.92
+            speech_speed = 0.95
         else:
             emotion = "NEUTRAL"
-            speech_speed = 1.00
+            speech_speed = 1.15
 
         is_casual_or_general = intent in (
             "GREETING", "GREETING_CASUAL", "JOKE", "CASUAL_MENTION", "PERSONAL_CHAT",
@@ -522,40 +522,19 @@ class DoctorAdvisorAgent:
                     pass
         if session_id:
             try:
-                # Append user turn
-                await SessionManager.add_turn(
-                    db=db,
-                    session_id=session_id,
-                    merchant_id=merchant_id,
-                    role="user",
-                    content=q_clean
-                )
-                # Append assistant turn
-                await SessionManager.add_turn(
-                    db=db,
-                    session_id=session_id,
-                    merchant_id=merchant_id,
-                    role="assistant",
-                    content=detailed_advice or spoken_text or "",
-                    spoken_content=spoken_text,
-                    tool_results=collected_tool_data,
-                    metrics_snapshot=collected_tool_data,
-                    referenced_entities=referenced_entities
-                )
-                trace_events.append("turns_persisted")
-
-                # Incrementally record structured session facts across all turns
-                await SessionManager.record_session_fact(
+                # Ultra-fast atomic persistence of user turn, assistant turn, and session memory
+                await SessionManager.add_turn_pair_and_record_fact(
                     db=db,
                     session_id=session_id,
                     merchant_id=merchant_id,
                     user_query=q_clean,
-                    assistant_reply=spoken_text,
+                    assistant_detailed=detailed_advice or spoken_text or "",
+                    assistant_spoken=spoken_text,
                     tool_results=collected_tool_data,
                     referenced_entities=referenced_entities,
-                    topic=intent,
-                    user_correction=q_clean if intent == "CORRECTION" else None
+                    topic=intent
                 )
+                trace_events.append("turns_persisted")
                 trace_events.append("session_fact_recorded")
 
             except Exception as t_err:
@@ -1009,8 +988,8 @@ class DoctorAdvisorAgent:
                 res: LLMResponse = await provider.chat_complete(
                     messages=messages,
                     temperature=0.2,
-                    max_tokens=480,
-                    timeout=8.0
+                    max_tokens=140,
+                    timeout=5.0
                 )
                 final_text = res.content or ""
                 spoken, detailed = self._parse_dual_format_response(final_text, lang)

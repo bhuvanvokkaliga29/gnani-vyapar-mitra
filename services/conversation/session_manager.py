@@ -121,6 +121,106 @@ class SessionManager:
         return list((await db.execute(stmt)).scalars().all())
 
     @classmethod
+    async def add_turn_pair_and_record_fact(
+        cls,
+        db: AsyncSession,
+        session_id: str,
+        merchant_id: str,
+        user_query: str,
+        assistant_detailed: str,
+        assistant_spoken: Optional[str] = None,
+        tool_results: Optional[Dict[str, Any]] = None,
+        referenced_entities: Optional[List[Dict[str, Any]]] = None,
+        topic: Optional[str] = None
+    ) -> None:
+        """Batch persist user turn, assistant turn, and session memory in a single atomic transaction."""
+        session = await cls.get_session(db, merchant_id, session_id)
+        if not session:
+            session = await cls.create_session(db, merchant_id, session_id=session_id)
+
+        count_stmt = select(func.count(VoiceConversationTurn.id)).where(
+            VoiceConversationTurn.session_id == session_id
+        )
+        base_index = (await db.execute(count_stmt)).scalar() or 0
+
+        user_turn = VoiceConversationTurn(
+            id=f"trn_{uuid.uuid4().hex[:12]}",
+            session_id=session_id,
+            merchant_id=merchant_id,
+            turn_index=base_index,
+            role="user",
+            content=user_query,
+            tool_calls_json=[],
+            tool_results_json={},
+            metrics_snapshot_json={},
+            referenced_entities_json=[],
+            token_usage_json={}
+        )
+
+        asst_turn = VoiceConversationTurn(
+            id=f"trn_{uuid.uuid4().hex[:12]}",
+            session_id=session_id,
+            merchant_id=merchant_id,
+            turn_index=base_index + 1,
+            role="assistant",
+            content=assistant_detailed or assistant_spoken or "",
+            spoken_content=assistant_spoken,
+            tool_calls_json=[],
+            tool_results_json=tool_results or {},
+            metrics_snapshot_json=tool_results or {},
+            referenced_entities_json=referenced_entities or [],
+            token_usage_json={}
+        )
+
+        db.add(user_turn)
+        db.add(asst_turn)
+
+        # Update session activity timestamp & focused entities
+        session.last_activity_at = datetime.now(timezone.utc)
+        if referenced_entities:
+            for ent in referenced_entities:
+                if ent.get("type") == "PRODUCT":
+                    session.focused_entity_type = "PRODUCT"
+                    session.focused_entity_id = ent.get("id") or session.focused_entity_id
+                    session.focused_entity_name = ent.get("name") or session.focused_entity_name
+                    session.focused_entity_sku = ent.get("sku") or session.focused_entity_sku
+
+        # Update memory JSON incrementally
+        try:
+            memory: Dict[str, Any] = {
+                "earliest_topic": None,
+                "opening_user_query": None,
+                "opening_assistant_reply": None,
+                "topics_covered": [],
+                "entities_discussed": {},
+                "key_metrics_discussed": {},
+                "user_corrections_or_preferences": [],
+                "decisions_made": []
+            }
+            if session.context_summary:
+                try:
+                    loaded = json.loads(session.context_summary)
+                    if isinstance(loaded, dict):
+                        memory.update(loaded)
+                except Exception:
+                    pass
+            if user_query and not memory.get("opening_user_query"):
+                memory["opening_user_query"] = user_query.strip()
+                if not memory.get("earliest_topic"):
+                    memory["earliest_topic"] = topic or user_query.strip()[:60]
+            if assistant_spoken and not memory.get("opening_assistant_reply"):
+                memory["opening_assistant_reply"] = assistant_spoken.strip()
+            if topic and topic not in memory["topics_covered"]:
+                memory["topics_covered"].append(topic)
+                if len(memory["topics_covered"]) > 15:
+                    memory["topics_covered"] = memory["topics_covered"][-15:]
+            session.context_summary = json.dumps(memory, ensure_ascii=False)
+        except Exception:
+            pass
+
+        await db.commit()
+
+    @classmethod
     async def add_turn(
         cls,
         db: AsyncSession,
