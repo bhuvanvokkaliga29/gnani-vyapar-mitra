@@ -271,13 +271,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             href="https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Project Documentation"
+            aria-label="Project Docs at Google Drive"
+            title="Project Docs at Google Drive"
             className="flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all text-[#526176] hover:text-[#0F172A] hover:scale-105 active:scale-95 group font-medium cursor-pointer"
           >
             <div className="p-1.5 rounded-full group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
               <FileText className="w-4 h-4" />
             </div>
-            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5 whitespace-nowrap">PROJECT DOCS</span>
+            <span className="text-[8px] sm:text-[9.5px] tracking-tight mt-0.5 whitespace-nowrap">PROJECT DOCS @ DRIVE</span>
           </a>
 
           {/* Tab 7: More / Others (Opens Remaining Features Drawer) */}

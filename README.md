@@ -31,9 +31,9 @@ Built upon **Gnani AI's Speech AI Platform (Prisma STT v3.0, Timbre TTS v3.0, an
 
 ---
 
-## Project Documentation
+## Project Documentation (Google Drive)
 
-**Solution Pitch & System Architecture:**  
+**Solution Pitch & System Architecture (at Google Drive):**  
 [https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing](https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing)
 
 Explore the project solution pitch and system architecture documentation for an overview of Vyapar Mitra's problem statement, product capabilities, Gnani AI integration, and technical architecture.
