@@ -162,17 +162,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* ============================================================== */}
-      {/* INSTAGRAM-STYLE BOTTOM NAVIGATION (6 ITEMS)                    */}
-      {/* 1: Overview | 2: Products | 3: Doctor | 4: Gnani Voice Agent | 5: GitHub Repo | 6: Others */}
+      {/* INSTAGRAM-STYLE BOTTOM NAVIGATION (7 ITEMS)                    */}
+      {/* 1: Overview | 2: Products | 3: Doctor | 4: Gnani Voice Agent | 5: GitHub Repo | 6: Project Docs | 7: Others */}
       {/* ============================================================== */}
-      <nav className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#D5DEE9] px-2 py-1.5 shadow-[0_-4px_20px_rgba(15,23,42,0.06)] overflow-visible">
-        <div className="max-w-2xl mx-auto grid grid-cols-6 items-end pb-0.5">
+      <nav className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#D5DEE9] px-1 sm:px-2 py-1.5 shadow-[0_-4px_20px_rgba(15,23,42,0.06)] overflow-visible">
+        <div className="max-w-2xl sm:max-w-3xl mx-auto grid grid-cols-7 items-end pb-0.5">
           
           {/* Tab 1: Overview */}
           <Link
             href="/"
             onClick={() => setIsMoreOpen(false)}
-            className={`flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-all ${
+            className={`flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all ${
               pathname === '/'
                 ? 'text-[#0F172A] font-bold scale-105'
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
@@ -181,14 +181,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <div className={`p-1.5 rounded-full ${pathname === '/' ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <LayoutDashboard className="w-4 h-4" />
             </div>
-            <span className="text-[10px] tracking-tight mt-0.5">Overview</span>
+            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5">Overview</span>
           </Link>
 
           {/* Tab 2: Products */}
           <Link
             href="/products"
             onClick={() => setIsMoreOpen(false)}
-            className={`flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-all ${
+            className={`flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all ${
               pathname.startsWith('/products')
                 ? 'text-[#0F172A] font-bold scale-105'
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
@@ -197,14 +197,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <div className={`p-1.5 rounded-full ${pathname.startsWith('/products') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <Package className="w-4 h-4" />
             </div>
-            <span className="text-[10px] tracking-tight mt-0.5">Products</span>
+            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5">Products</span>
           </Link>
 
           {/* Tab 3: Growth Doctor */}
           <Link
             href="/doctor"
             onClick={() => setIsMoreOpen(false)}
-            className={`flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-all ${
+            className={`flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all ${
               pathname.startsWith('/doctor')
                 ? 'text-[#0F172A] font-bold scale-105'
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
@@ -213,7 +213,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <div className={`p-1.5 rounded-full ${pathname.startsWith('/doctor') ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <Stethoscope className="w-4 h-4" />
             </div>
-            <span className="text-[10px] tracking-tight mt-0.5">Doctor</span>
+            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5">Doctor</span>
           </Link>
 
           {/* Tab 4: Gnani AI Voice Agent (Hero Prominence & Glowing Highlight) */}
@@ -242,7 +242,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Bold High-Contrast Label */}
-            <span className="text-[8.5px] sm:text-[10px] font-black tracking-tight text-[#0F172A] text-center uppercase mt-1 leading-tight drop-shadow-xs whitespace-nowrap">
+            <span className="text-[8px] sm:text-[10px] font-black tracking-tight text-[#0F172A] text-center uppercase mt-1 leading-tight drop-shadow-xs whitespace-nowrap">
               GNANI VOICE AGENT
             </span>
 
@@ -258,18 +258,32 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Repository"
-            className="flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-all text-[#526176] hover:text-[#0F172A] hover:scale-105 active:scale-95 group font-medium cursor-pointer"
+            className="flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all text-[#526176] hover:text-[#0F172A] hover:scale-105 active:scale-95 group font-medium cursor-pointer"
           >
             <div className="p-1.5 rounded-full group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
               <GithubIcon className="w-4 h-4" />
             </div>
-            <span className="text-[10px] tracking-tight mt-0.5 whitespace-nowrap">GITHUB REPO</span>
+            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5 whitespace-nowrap">GITHUB REPO</span>
           </a>
 
-          {/* Tab 6: More / Others (Opens Remaining Features Drawer) */}
+          {/* Tab 6: Project Docs (Google Drive Solution Pitch & System Architecture) */}
+          <a
+            href="https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Project Documentation"
+            className="flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all text-[#526176] hover:text-[#0F172A] hover:scale-105 active:scale-95 group font-medium cursor-pointer"
+          >
+            <div className="p-1.5 rounded-full group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+              <FileText className="w-4 h-4" />
+            </div>
+            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5 whitespace-nowrap">PROJECT DOCS</span>
+          </a>
+
+          {/* Tab 7: More / Others (Opens Remaining Features Drawer) */}
           <button
             onClick={() => setIsMoreOpen(!isMoreOpen)}
-            className={`flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-all ${
+            className={`flex flex-col items-center justify-center py-1 px-0.5 sm:px-1 rounded-lg transition-all ${
               isMoreOpen || isMoreActive
                 ? 'text-[#0F172A] font-bold scale-105'
                 : 'text-[#526176] hover:text-[#0F172A] font-medium'
@@ -278,7 +292,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <div className={`p-1.5 rounded-full ${isMoreOpen || isMoreActive ? 'bg-[#0F172A] text-white shadow-xs' : ''}`}>
               <Grid className="w-4 h-4" />
             </div>
-            <span className="text-[10px] tracking-tight mt-0.5">Others</span>
+            <span className="text-[9px] sm:text-[10px] tracking-tight mt-0.5">Others</span>
           </button>
 
         </div>

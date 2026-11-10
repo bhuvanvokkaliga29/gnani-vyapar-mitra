@@ -3,6 +3,7 @@
 
 [![Live Application](https://img.shields.io/badge/Live_App-Vercel_Production-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://gnani-vyapar-mitra-apps.vercel.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-gnani--vyapar--mitra-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bhuvanvokkaliga29/gnani-vyapar-mitra)
+[![Project Documentation](https://img.shields.io/badge/Project_Docs-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing)
 [![Gnani Speech Platform](https://img.shields.io/badge/Gnani_AI-Speech_Platform_v3.0-FF6F00?style=for-the-badge&logo=soundcharts&logoColor=white)](https://gnani.ai/)
 [![Gnani Prisma STT](https://img.shields.io/badge/Gnani_Prisma_STT-v3.0_Indic_Auto-00C853?style=for-the-badge)](https://api.vachana.ai)
 [![Gnani Timbre TTS](https://img.shields.io/badge/Gnani_Timbre_TTS-Voice:_Lakshmi_&_Avinash-7C4DFF?style=for-the-badge)](https://api.vachana.ai)
@@ -27,6 +28,15 @@ Independent retail merchants and small-to-medium enterprises (MSMEs) form the ba
 **Vyapar Mitra ("Every Shop's Companion")** is an autonomous, multilingual conversational voice agent and commercial growth copilot. Designed as an in-house "Business Doctor", Vyapar Mitra enables merchants to speak naturally to their business.
 
 Built upon **Gnani AI's Speech AI Platform (Prisma STT v3.0, Timbre TTS v3.0, and Inya Agent Platform)** and **Google Gemini Reasoning**, Vyapar Mitra accurately transcribes regional speech, computes exact commercial metrics using deterministic arithmetic, resolves inventory risks, models multi-channel profit arbitrage, and answers business queries in spoken regional audio.
+
+---
+
+## Project Documentation
+
+**Solution Pitch & System Architecture:**  
+[https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing](https://drive.google.com/drive/folders/1B2zhrqg451CnY1zA3ti3cf-jsFHVrdg8?usp=sharing)
+
+Explore the project solution pitch and system architecture documentation for an overview of Vyapar Mitra's problem statement, product capabilities, Gnani AI integration, and technical architecture.
 
 ---
 
